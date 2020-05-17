@@ -2,6 +2,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'default-purple' : '#642c90',
+        'default-grey': '#4a4a4a',
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',

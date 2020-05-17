@@ -10,16 +10,17 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
+import FeaturedVideo from '../../components/featured-video'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts}) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
-        <Header />
+        {/* <Header /> */}
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -36,7 +37,13 @@ export default function Post({ post, morePosts, preview }) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                youtubeId={post.youtubeId}
               />
+              {/* {
+                !post.youtubeId
+                ? null
+                : <FeaturedVideo id={post.youtubeId} /> 
+              } */}
               <PostBody content={post.content} />
             </article>
           </>
@@ -55,6 +62,7 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'youtubeId'
   ])
   const content = await markdownToHtml(post.content || '')
 
