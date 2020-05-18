@@ -4,7 +4,7 @@ import { Button } from 'rbx'
 const tags = ['all articles','📺 video','technology', 'economics', 'investing']
 
 const ArticleTag = ({tag}) => (
-<Button onClick={() => console.log(tag)} color='primary'>{tag}</Button>
+  <Button onClick={() => console.log(tag)} color='primary'>{tag}</Button>
 )
 
 export default function MoreArticles({ posts }) {
@@ -17,7 +17,7 @@ export default function MoreArticles({ posts }) {
         <div className='py-4'>
           <Button.Group size='small'>
           {
-            tags.map(tag => <ArticleTag tag={tag} />)
+            tags.map(tag => <ArticleTag key={tag} tag={tag} />)
           }
           </Button.Group>
         </div>
