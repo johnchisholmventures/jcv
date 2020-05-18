@@ -1,7 +1,7 @@
 import PostPreview from './post-preview'
 import { Button } from 'rbx'
 
-const tags = ['📺 video','technology', 'economics', 'investing']
+const tags = ['all articles','📺 video','technology', 'economics', 'investing']
 
 const ArticleTag = ({tag}) => (
 <Button onClick={() => console.log(tag)} color='primary'>{tag}</Button>
