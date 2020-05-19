@@ -10,6 +10,10 @@ author:
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 youtubeId: d7T4RKvZo_U
+tags: 
+  - video
+  - book
+  - entrepreneurship
 ---
 
 In entrepreneurship, where do you start? How important is a co-founder, and what should you look for? How can you best leverage technology? When are the best times to raise money? How can you scale your business? Practical tips for starting your own business.

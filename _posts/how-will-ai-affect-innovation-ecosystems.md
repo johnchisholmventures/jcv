@@ -10,6 +10,9 @@ author:
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 youtubeId: OWE8iNBSDCw
+tags:
+  - video
+  - innovation
 ---
 
 John discusses how ecosystems of innovation produce and improve technologies like Artificial Intelligence. Presentation given on December 8, 2017 at the Artificial Intelligence International Youth Summit held in Hefei, Anhui Province, China.

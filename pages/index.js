@@ -50,8 +50,11 @@ export async function getStaticProps() {
     'author',
     'coverImage',
     'excerpt',
-    'youtubeId'
+    'youtubeId',
+    'tags'
   ])
+
+  console.log("ALL POSTS", allPosts)
 
   return {
     props: { allPosts },

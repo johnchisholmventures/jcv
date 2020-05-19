@@ -1,6 +1,5 @@
 import '../styles/index.css'
-import 'rbx/index.css'
-import '../styles/rbxOverrides.css'
+import '../styles/rbx.scss'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS

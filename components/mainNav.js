@@ -9,7 +9,7 @@ const MainNav = () => {
                     <Link href='/'>
                     <Navbar.Item>
                         <img
-                            className='h-8 md:h-10'
+                            className='h-6 md:h-8 md:h-10'
                             src="/assets/logo.png"
                             alt=""
                             role="presentation"
