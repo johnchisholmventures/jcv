@@ -4,7 +4,7 @@ import Head from 'next/head'
 import TeamSection from '../components/team-section'
 import PostTitle from '../components/post-title'
 import SectionSeparator from '../components/section-separator'
-import {getTeamMembers} from '../lib/api'
+import {getPageContent, johnFirst} from '../lib/api'
 import markdownToHtml from '../lib/markdownToHtml'
 
 export default function Team({persons}) {
@@ -18,8 +18,8 @@ export default function Team({persons}) {
             <PostTitle>Our Team</PostTitle>
             {
               persons.map((person, index)=> (
-                <>
-                  <TeamSection key={person.slug} picture={person.picture} name={person.name} twitter={person.twitter} linkedIn={person.linkedIn}>
+                <div key={index}>
+                  <TeamSection picture={person.picture} name={person.name} twitter={person.twitter} linkedIn={person.linkedIn}>
                     {person.content}
                   </TeamSection>
                   {
@@ -27,7 +27,7 @@ export default function Team({persons}) {
                     ? <SectionSeparator />
                     : null
                   }
-                </>
+                </div>
               ))
             }
         </Container>
@@ -39,11 +39,11 @@ export default function Team({persons}) {
 
 
 export async function getStaticProps() {
-  const persons = await Promise.all(getTeamMembers().map(async person => ({...person, content: await markdownToHtml(person.content)})))
-
+  const persons = await Promise.all(getPageContent('team', ['name', 'picture', 'twitter','linkedIn', 'content', 'slug'])
+    .map(async person => ({...person, content: await markdownToHtml(person.content)})))
   return {
     props: {
-      persons
+      persons: johnFirst(persons)
     },
   }
 }

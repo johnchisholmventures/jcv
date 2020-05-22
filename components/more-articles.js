@@ -51,8 +51,6 @@ export default function MoreArticles({ posts }) {
   const tagsDir = postsToTagsDir(posts)
 
   const updateActiveArticles = tag => {
-    console.log("TAG", tag)
-
     const activeArticleSlugs = tagsDir[tag] || []
     const activeArticles = activeArticleSlugs.map(slug => postsDir[slug])
     return activeArticles.length > 0

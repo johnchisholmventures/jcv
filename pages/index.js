@@ -54,8 +54,6 @@ export async function getStaticProps() {
     'tags'
   ])
 
-  console.log("ALL POSTS", allPosts)
-
   return {
     props: { allPosts },
   }

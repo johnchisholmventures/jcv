@@ -5,7 +5,6 @@ import PostTitle from '../components/post-title'
 import FeaturedVideo from './featured-video'
 
 export default function PostHeader({ title, coverImage, date, author, youtubeId }) {
-  console.log("IS YOUTUBE", youtubeId)
   return (
     <>
       <PostTitle>{title}</PostTitle>
