@@ -16,3 +16,13 @@ $custom-colors: ("default-purple": ($default-purple, $default-purple-invert));
 .navbar-item img {
     max-height: none;
 }
+
+a.navbar-item:hover {
+    color: $default-purple;
+}
+
+a.navbar-item.is-active {
+    background-color: #fafafa;
+    color: $default-purple;
+    font-weight: bold;
+}

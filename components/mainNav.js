@@ -1,7 +1,10 @@
 import {Navbar, Container} from 'rbx'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const MainNav = () => {
+    const {pathname} = useRouter()
+    const isActive = (target) => pathname.split('/')[1] === target ? true: false
     return (
         <Navbar>
             <Container className='py-12'>
@@ -20,9 +23,9 @@ const MainNav = () => {
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <Navbar.Segment align="end">
-                    <Link href='/mission'><Navbar.Item>Mission</Navbar.Item></Link>
-                    <Link href='/investments'><Navbar.Item>Investments</Navbar.Item></Link>
-                    <Link href='/team'><Navbar.Item>Team</Navbar.Item></Link>
+                    <Link href='/mission'><Navbar.Item active={isActive('mission')}>Mission</Navbar.Item></Link>
+                    <Link href='/investments'><Navbar.Item active={isActive('investments')}>Investments</Navbar.Item></Link>
+                    <Link href='/team'><Navbar.Item active={isActive('team')}>Team</Navbar.Item></Link>
                     <Navbar.Item href='http://unleashyourinnercompany.com'>Unleash Your Inner Company</Navbar.Item>
                     </Navbar.Segment>
                 </Navbar.Menu>

@@ -1,15 +1,15 @@
 import Container from './container'
 
-export default function Alert({active, children}) {
+export default function Alert({children}) {
   return (
     <>
     {
-      !active
+      !children
       ? null
       : 
-      <div className={'border-b bg-accent-1 border-accent-2'}>
+      <div className={'bg-default-purple border-accent-2'}>
         <Container>
-          <div className="py-2 text-center text-sm">
+          <div className="py-2 text-center text-sm text-white">
             {children}
           </div>
         </Container>
