@@ -1,0 +1,73 @@
+---
+title: '10 Lessons in Customer Satisfaction, Loyalty, and Feedback'
+excerpt: 'From 1992 to 2009, I ran online survey software and research companies Decisive Technology (now part of Google) and CustomerSat (now part of Confirm-IT). Decisive was the first software company to automate surveys via email; CustomerSat was a leader in Enterprise Feedback Management. I’m sometimes asked what Iessons about customer satisfaction, loyalty, and feedback stick in my mind from those 17 years.'
+coverImage: '/assets/blog/preview/cover.jpg'
+date: '2020-03-16T05:35:07.322Z'
+author:
+  name: John Chisholm
+  picture: '/assets/blog/authors/chisholm.jpg'
+  bio: '/team'
+ogImage:
+  url: '/assets/blog/preview/cover.jpg'
+type: 'essay'
+tags:
+  - entrepreneurship
+---
+
+From 1992 to 2009, I ran online survey software and research companies Decisive Technology (now part of Google) and CustomerSat (now part of Confirm-IT). Decisive was the first software company to automate surveys via email; CustomerSat was a leader in Enterprise Feedback Management. I’m sometimes asked what Iessons about customer satisfaction, loyalty, and feedback stick in my mind from those 17 years. Here are ten:
+
+1. Timeliness is important to customers everywhere. No matter what the industry or touchpoint, customers value speedy responses. From financial services to health care to high-tech, and from call centers to web sites to account management, prompt responses, closure and follow-up consistently rank among the highest drivers of overall satisfaction.
+
+I see three reasons for this. First, a customer’s time is valuable and, as the saying goes, “is money”, whether or not an explicit hourly rate can be applied to it. Second, waiting can simply be frustrating. Third, speedy responses minimize the period of uncertainty during which a customer has to wonder what the response will be or even if he or she will get a response.
+
+A few years ago, members of Congress debated whether the Postal Service needed to speed up delivery of mail across the US. One congressman argued that what consumers and businesses value is consistency of delivery times rather than speed, and thus speeding up deliveries had limited value. That was utter nonsense. If delivery takes two extra days, shippers and advertisers have to prepare their materials that much further in advance; consumers have to wait longer; and it is actually harder to guarantee a specified window of delivery time. If consistency were most important, FedEx, email and Instant Messaging would not have had such explosive growth while the USPS has languished.
+
+2. Targeting leads to higher satisfaction. American General and 21stCentury, each of which sells just life or auto insurance, respectively, enjoy higher satisfaction than other insurance companies that sell many types of insurance. Intuit’s Digital Insight unit, which serves only commercial banks and credit unions, enjoys higher customer satisfaction than other B2B suppliers that serve all types of financial institutions. It is hard enough to serve one type of customer really well; to try to serve many different customers, with their wide range of requirements, is much harder. Businesses trying to address multiple sets of customer needs have to trade off priorities across customer bases. While they often have more resources to work with, execs at those businesses can’t be as close to and familiar with the requirements of each customer base; they misestimate or misunderstand some requirements; they call more shots wrong; and use up precious resources and management time making trade-offs.
+
+3. Benchmarks bring meaning to statistics. Implicit in the meaning of “metric” – a measurement – is a benchmark or yardstick. The benchmark may be satisfaction scores for all of last year, or the mean for all of a company’s business units, or for an entire industry — whichever are available and most relevant. Metrics bring context and meaning to statistics. A satisfaction score of 7.3 on a 10-point scale does not tell us much about performance, even if we know that standard deviation is .8. But adding that the relevant benchmark score is 8.1 tells us that performance is one full standard deviation below benchmark, which tells us a great deal.
+
+Metrics are best expressed relative to benchmarks, typically as gaps or ratios. They let us “zoom in” on performance differences and thus better understand those differences. For example, suppose that all of the performance scores for a new digital camera fall between 7.0 and 8.0 on a 1-to-10 scale. Suppose further that customers rate “ease of use” as 7.4 on the absolute 10-point scale, and “size and weight” as 7.6 on the same scale. The two scores would be very close together – a difference of only .2 — and at first blush the lower “ease of use” score might appear to be the slightly more important issue to address.
+
+Now suppose that the relevant benchmark scores also all range between 7.0 and 8.0. If we plot performance gaps relative to benchmark, our 1-to-10 absolute scale expands to a -1 to +1 gap scale. Let’s say that for all camera brands in our target market, the “ease of use” benchmark is 7.0, and the “size and weight” benchmark is 8.0. On the gap scale “size and weight” would thus be at -.4 and “ease of use” at +.4, giving us a much larger performance difference between these two metrics of .8 and closer lens with which to assess and track performance.
+
+Benchmarks also let us more effectively prioritize areas of improvement. Now, suddenly, “size and weight” – where we fall behind the industry benchmark – is the more important competitive issue to address, while our “ease of use” performance is well ahead of the industry. Benchmarking brought new insights to our actions resulting in a change of priorities.
+
+4. Accountability and operational efficiency benefit hugely from customer feedback. We usually think of business intelligence as being enhanced by customer feedback. But other management concerns do as well. Accountability benefits by being able to hold each team, department or business unit accountable for its satisfaction performance. Efficiency benefits as a result of being able to take immediate and targeted action when problems arise. Increasingly, cross-functional teams are needed to best determine and fully implement action plans responding to customer feedback.
+
+As these enterprise-wide benefits have become more widely recognized and appreciated, they are affecting the role of customer advocacy itself: elevating it in many cases from service and support departments, to business unit-level staffs, to the office of the COO.
+
+5. Satisfaction scores vary widely among performance attributes, touchpoints, and businesses, meaning that targets cannot and should not just be pulled out of thin air. Setting them requires substantial analysis and thought. Among attributes, the highest measure, often “courtesy and professionalism,” may be a full point higher on a 10-point scale than the lowest measure, often “how well your agent/representative knows the company I work for [if B2B] or me personally [if B2C].” So a 7.5, for example, can be a high score for one attribute but a low score for another. Among touchpoints, human-based ones such as call centers tend to get higher scores than machine-based ones such as web sites or online documentation. Not wishing to give offense, we humans tend to give higher scores to other humans than to machines.
+
+Your CEO may say, “I want us to target overall satisfaction of 8.0 this year.” That may be fine for rallying the troops and focusing their attention on customer satisfaction, especially if the target represents an aggressive but achievable improvement over last year. But a comprehensive performance measurement and reward system that holds individual execs accountable and drives lasting process improvements will require much more analysis and planning.
+
+6. Behavioral data is trumping survey data. Behaviors include what, how and when customers made purchases; how many times they called technical support; whether they attended the latest training course or webinar; their participation in online communities; whether they have registered as Fans of our Facebook page; whether they follow our company’s Tweets; whether they Tweet or re-Tweet about us; the exact paths they walked up and down the aisles in a retail store; body language and facial expressions. The number of ways we can track these behaviors – including data warehouses, smart phones with GPS, web cams, motion detectors, radio-frequency identification (RFID) tags embedded in consumer packaged goods, and a growing variety of micro-sensors – is skyrocketing. Because they require no respondent cooperation, different subsets of these data can be gathered on all customers (notwithstanding privacy issues); unlike surveys, which require customers’ time and attention to complete. At the same time, response rates of surveys, the means by which attitudes are gathered, are falling. Not surprisingly, market researchers and data analysts are finding new ways to mine and glean insights from behavioral data.
+
+Attitudinal data uniquely helps us predict customer behaviors. Combining satisfaction data from surveys with behavioral data is ideal. Despite these advantages, I see satisfaction surveys gradually shifting over time from their central role today in customer intelligence to a tool for validating and embellishing behavioral data. The latter not only reflects more facets of customer thinking, but can be gathered more reliably and economically.
+
+7. Satisfaction tells only part of the story. Mainframes, travel agents, fax machines, and Cadillacs are four products whose market shares have plummeted over the last 20 years. They likely enjoyed high or even increasing customer satisfaction ratings all the way down: their remaining customers were very satisfied with them until they switched to faster, cheaper, or better alternatives: PC server networks, self-service online reservations, email, and Japanese luxury-car imports, in the above four cases. The last holdout users of a product or service are the most loyal and often the most satisfied as well. After all, they have a long history using the product or service and may well have a substantially investment in it.
+
+So satisfaction scores tell only part of the story. Never rely on them alone. At minimum, also track market shares and market-wide attitudes towards your products and services, including those of users of innovative substitutions in addition to those of your current and recent customers.
+
+8. Use multiple vantage points; triangulate. No matter how advanced the management information systems, they still fall far short of telling execs everything they need to know to run a business. There are no Google Maps and no GPS for charting business strategy; relative to the decisions execs have to make, even the best information tools are more akin to an old-fashioned compass. Execs still need to make estimates, judgments, and even guesses about such matters as how customers will respond to price increases, what competitors will do next, how new technologies can be leveraged, and how large a raise, if any, is required to keep a valued employee engaged.
+
+Imagine we are sailors visiting a remote south-sea island with a vast network of caves in any of whose nooks and crannies could be stored a treasure chest of gold and silver. We have only compasses and torches to explore those nooks and crannies. We have to hold the torches at different positions and angles to illuminate every nook and cranny and find the treasure. We execs are like those sailors and our markets and businesses are like those caves. Different analytics and metrics — trend lines, mean scores, gaps, correlations, cross-tabs — are like the different positions and angles for illumination. Any claim that this or that is the “only metric you’ll ever need” is nonsense. Imagine being a passenger in a plane whose pilot had only a single gauge in the cockpit! So look at your business from multiple vantage points to get as full a picture as possible.
+
+9. Customer advocates have fads, too. Teens have heart throbs; music has rock stars. Customer feedback has fads, too. In the last 20 years, they have included service quality (SERVQUAL), expectations, customer value analysis, six sigma, Net Promoter Score, and customer engagement. Some of these have little merit but nonetheless survive by dint of marketing and simplicity. Others are rigorous but have relatively few users due to complexity. Time and time again, one or more new approaches will take command of center stage and stay there for quarters or years until something new comes along. The earlier approaches will then gradually fade into the limelight of the ever-growing warehouse of customer loyalty techniques. Keep a look out for the Next Big Thing based on Twitter tweets. Sic simper erat; sic semper erit: thus it has always been; thus it shall ever be.
+
+10. Feedback truly makes a difference. Many execs assiduously track internal metrics such as gross margin, gross profit, and Return on Assets, but overlook measures of customer satisfaction, loyalty, and advocacy altogether. In some cases, this reflects a shortsighted focus on this quarter’s financial results; in others, lack of awareness or knowledge; in still others, a misconception or bias that measuring satisfaction’s primary value is for PR or for customer references.
+
+Properly used, customer feedback will either drive or carry significant weight in dozens of decisions large and small: product enhancements, positioning, service quality levels, staffing, promotions, organization, order management, even mergers and acquisitions. The evidence is overwhelming from the American Customer Satisfaction Index (ACSI) and many other sources: companies that consistently measure and act on customer satisfaction and loyalty really do perform better.
+
+Summary:
+
+Timeliness is important to customers everywhere.
+Targeting leads to higher satisfaction.
+Benchmarks bring meaning to statistics.
+Accountability and operational efficiencybenefit hugely from customer feedback.
+Satisfaction scores vary widely among performance attributes, touchpoints, and businesses, meaning that targets cannot and should not just be pulled out of thin air.
+Behavioral data is trumping survey data.
+Satisfaction tells only part of the story.
+Use multiple vantage points; triangulate.
+Customer advocates have fads, too.
+Feedback truly makes a difference.
+This article first appeared in January, 2010 on Global-CEM site.

@@ -6,12 +6,12 @@ date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
-  bio: '/about'
+  bio: '/team'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 youtubeId: OWE8iNBSDCw
+type: video
 tags:
-  - video
   - innovation
 ---
 

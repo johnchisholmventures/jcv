@@ -62,6 +62,7 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'type',
     'youtubeId'
   ])
   const content = await markdownToHtml(post.content || '')

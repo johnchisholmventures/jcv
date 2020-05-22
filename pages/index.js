@@ -9,7 +9,6 @@ import { Column } from 'rbx'
 
 export default function Index({ allPosts }) {
   const heroPost = allPosts.find(post => post.slug === 'how-will-ai-affect-innovation-ecosystems') || allPosts[0]
-  const morePosts = allPosts.slice(1)
   return (
     <>
       <Layout>
@@ -32,7 +31,7 @@ export default function Index({ allPosts }) {
               )}
             </Column>
             <Column className='order-first' size='one-third'>
-              {morePosts.length > 0 && <MoreArticles posts={morePosts} />}
+              {allPosts.length > 0 && <MoreArticles posts={allPosts} />}
             </Column>
           </Column.Group>
 
@@ -51,9 +50,9 @@ export async function getStaticProps() {
     'coverImage',
     'excerpt',
     'youtubeId',
+    'type',
     'tags'
   ])
-
   return {
     props: { allPosts },
   }
