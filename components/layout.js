@@ -11,7 +11,7 @@ export default function Layout({ children }) {
       <div className="min-h-screen">
         <Alert>
           <div className='flex flex-row justify-center align-items-center'>
-            <p className='pr-4'>Check out John's new book: <a className='text-teal-400 hover:text-teal-500' href='https://integralpoem.com'>Integral: A Mathematical Odyssey</a></p>
+            <p className='pr-4'>Check out John's new book: <a className='text-teal-400 hover:text-teal-500' href='http://integralpoem.com'>Integral: A Mathematical Odyssey</a></p>
           </div>
         </Alert>
         <MainNav />
