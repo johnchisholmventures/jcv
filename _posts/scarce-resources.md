@@ -1,14 +1,14 @@
 ---
 title: 'Wireless Spectrum and Fossil Fuels: “Scarce” Resources that Keep Proliferating'
 excerpt: 'What do oil, natural gas, and radio spectrum capacity have in common?  All three were predicted in recent years to run out.  But all three have kept growing thanks to continuous innovation.'
-coverImage: '/assets/blog/preview/cover.jpg'
+coverImage: '/assets/blog/covers/wireless.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
 ogImage:
-  url: '/assets/blog/preview/cover.jpg'
+  url: '/assets/blog/covers/wireless.jpg'
 type: 'essay'
 tags:
   - innovation

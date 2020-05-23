@@ -30,21 +30,28 @@ export default function Post({ post, morePosts}) {
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                {
+                  post.ogImage && post.ogImage.url && <meta property="og:image" content={post.ogImage.url} />
+                }
+                {
+                  post.ogVideo && post.ogVideo.url && <meta property="og:video" content={post.ogVideo.url} />
+                }
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-                youtubeId={post.youtubeId}
-              />
-              {/* {
-                !post.youtubeId
-                ? null
-                : <FeaturedVideo id={post.youtubeId} /> 
-              } */}
-              <PostBody content={post.content} />
+              <div className="max-w-xl mx-auto">
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                  youtubeId={post.youtubeId}
+                />
+                {/* {
+                  !post.youtubeId
+                  ? null
+                  : <FeaturedVideo id={post.youtubeId} /> 
+                } */}
+                <PostBody content={post.content} />
+              </div>
             </article>
           </>
         )}

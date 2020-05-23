@@ -1,14 +1,14 @@
 ---
 title: 'Interview'
 excerpt: 'In this candid interview, John discusses how getting fired led him to start his first company, the approach he uses to assess start-ups, the importance of psychology in entrepreneurship, and more.'
-coverImage: '/assets/blog/preview/cover.jpg'
+coverImage: '/assets/blog/covers/interview.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
 ogImage:
-  url: '/assets/blog/preview/cover.jpg'
+  url: '/assets/blog/covers/interview.jpg'
 type: 'essay'
 tags:
   - entrepreneurship

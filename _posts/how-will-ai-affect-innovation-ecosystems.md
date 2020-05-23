@@ -7,9 +7,9 @@ author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
-youtubeId: OWE8iNBSDCw
+ogVideo:
+  url: 'https://youtu.be/JD7bh1Cf4Qs'
+youtubeId: 'JD7bh1Cf4Qs'
 type: video
 tags:
   - innovation

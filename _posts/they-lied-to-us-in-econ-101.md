@@ -1,14 +1,14 @@
 ---
 title: 'As Entrepreneurs Keep Reminding Us, They Lied To Us In Econ. 101'
 excerpt: 'Can theoretical, scientific study of complex systems inform the hardscrabble world of start-ups? Yes. To see how, meet the Santa Fe Institute.'
-coverImage: '/assets/blog/preview/cover.jpg'
+coverImage: '/assets/blog/covers/fractal.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
 ogImage:
-  url: '/assets/blog/preview/cover.jpg'
+  url: '/assets/blog/covers/fractal.jpg'
 type: 'essay'
 tags:
   - innovation

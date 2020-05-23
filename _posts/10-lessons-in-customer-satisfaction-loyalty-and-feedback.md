@@ -1,14 +1,14 @@
 ---
 title: '10 Lessons in Customer Satisfaction, Loyalty, and Feedback'
 excerpt: 'From 1992 to 2009, I ran online survey software and research companies Decisive Technology (now part of Google) and CustomerSat (now part of Confirm-IT). Decisive was the first software company to automate surveys via email; CustomerSat was a leader in Enterprise Feedback Management. I’m sometimes asked what Iessons about customer satisfaction, loyalty, and feedback stick in my mind from those 17 years.'
-coverImage: '/assets/blog/preview/cover.jpg'
+coverImage: '/assets/blog/covers/loyalty.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
 ogImage:
-  url: '/assets/blog/preview/cover.jpg'
+  url: '/assets/blog/covers/loyalty.jpg'
 type: 'essay'
 tags:
   - entrepreneurship

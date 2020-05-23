@@ -1,14 +1,14 @@
 ---
 title: 'Robots And Software Eating Jobs? Let Them, You Can Create Your Own'
 excerpt: 'New technologies are eating jobs. Big deal, you might say. After all, the steam engine, cotton gin, sewing machine, and automobile all eliminated jobs. The fact is that new technologies have long created many more new jobs than they have eliminated.'
-coverImage: '/assets/blog/preview/cover.jpg'
+coverImage: '/assets/blog/covers/machines.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
 ogImage:
-  url: '/assets/blog/preview/cover.jpg'
+  url: '/assets/blog/covers/machines.jpg'
 type: 'essay'
 tags:
   - innovation

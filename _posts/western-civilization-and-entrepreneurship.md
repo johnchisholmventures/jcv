@@ -7,9 +7,9 @@ author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
-youtubeId: d7T4RKvZo_U
+ogVideo:
+  url: 'https://youtu.be/hy_BfLfwRCU'
+youtubeId: hy_BfLfwRCU
 type: video
 tags: 
   - entrepreneurship
