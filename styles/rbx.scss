@@ -4,6 +4,7 @@
 
 // add new colors
 $default-purple: #642c90 !default;
+$default-grey: #4a4a4a !default;
 $default-purple-invert: findColorInvert($default-purple) !default;
 $custom-colors: ("default-purple": ($default-purple, $default-purple-invert));
 
@@ -19,6 +20,15 @@ $custom-colors: ("default-purple": ($default-purple, $default-purple-invert));
 
 a.navbar-item:hover {
     color: $default-purple;
+}
+
+a {
+    color: $default-purple;
+    font-weight: 500;
+}
+
+a:hover {
+    color: $default-grey;
 }
 
 a.navbar-item.is-active {

@@ -1,6 +1,6 @@
 import Container from '../components/container'
 import MoreArticles from '../components/more-articles'
-import HeroPost from '../components/hero-post'
+import FeaturedArticles from '../components/featured-articles'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
@@ -8,7 +8,8 @@ import Head from 'next/head'
 import { Column } from 'rbx'
 
 export default function Index({ allPosts }) {
-  const heroPost = allPosts.find(post => post.slug === 'how-will-ai-affect-innovation-ecosystems') || allPosts[0]
+  const featuredArticles = allPosts.filter(article => article.featured ).sort((a,b) => a.featured - b.featured )
+  console.log("FEATURED ARTICLE!", featuredArticles)
   return (
     <>
       <Layout>
@@ -18,23 +19,12 @@ export default function Index({ allPosts }) {
         <Container>
           <Column.Group>
             <Column>
-              {heroPost && (
-                <HeroPost
-                  title={heroPost.title}
-                  coverImage={heroPost.coverImage}
-                  date={heroPost.date}
-                  author={heroPost.author}
-                  slug={heroPost.slug}
-                  excerpt={heroPost.excerpt}
-                  youtubeId={heroPost.youtubeId}
-                />
-              )}
+              <FeaturedArticles articles={featuredArticles} />
             </Column>
             <Column className='order-first' size='one-third'>
               {allPosts.length > 0 && <MoreArticles posts={allPosts} />}
             </Column>
           </Column.Group>
-
         </Container>
       </Layout>
     </>
@@ -50,6 +40,7 @@ export async function getStaticProps() {
     'coverImage',
     'excerpt',
     'youtubeId',
+    'featured',
     'type',
     'tags'
   ])

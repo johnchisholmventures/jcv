@@ -15,6 +15,7 @@
     "gray-matter": "4.0.2",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
+    "pure-react-carousel": "^1.27.1",
     "rbx": "^2.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

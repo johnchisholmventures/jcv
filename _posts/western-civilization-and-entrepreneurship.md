@@ -10,6 +10,7 @@ author:
 ogVideo:
   url: 'https://youtu.be/hy_BfLfwRCU'
 youtubeId: hy_BfLfwRCU
+featured: 2
 type: video
 tags: 
   - entrepreneurship

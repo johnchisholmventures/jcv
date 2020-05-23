@@ -1,5 +1,6 @@
 import '../styles/index.css'
 import '../styles/rbx.scss'
+import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS

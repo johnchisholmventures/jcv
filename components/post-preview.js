@@ -17,7 +17,7 @@ export default function PostPreview({
       <div className='hover:bg-gray-200'>
         <a className='text-default-grey hover:text-default'>
           <div>
-            <h3 className="text-xl mb-3 leading-snug">{title}</h3>
+            <h3 className="text-xl mb-1 leading-snug">{title}</h3>
             <h3 className='text-xs'>{excerpt.slice(0,100)}...</h3>
           </div>
         </a>
