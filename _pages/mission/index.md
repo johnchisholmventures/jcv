@@ -1,11 +1,12 @@
-To encourage, mentor and empower entrepreneurs who are passionate about making the world a better place; and to help create market environments conducive to entrepreneurship worldwide.
-We are technology entrepreneurs who have experienced first-hand the challenge, personal growth, and liberation of entrepreneurship; and witnessed the economic growth and advances in quality of life that entrepreneurship drives worldwide.  We serve other entrepreneurs through consulting, angel investing, and mentoring.
+*** To encourage, mentor and empower entrepreneurs who are passionate about making the world a better place; and to help create market environments conducive to entrepreneurship worldwide. ***
+
+We are technology entrepreneurs who have experienced first-hand the challenge, personal growth, and liberation of entrepreneurship; and witnessed the economic growth and advances in quality of life that entrepreneurship drives worldwide.  We serve other entrepreneurs through consulting, angel investing, and [mentoring](http://www.youtube.com/watch?v=cOZ6Gpbm-lQ).
 
 We help entrepreneurs pursue their passions; focus on what they love to do and do best; overcome obstacles; help them offer more choice, value, or both to the world; and thereby make the world a better place.  We do this in early stages by helping them build their confidence to strike out on their own; recognize all of the resources, both tangible and intangible, that they possess and that are at their disposal; see unaddressed customer needs in areas they are passionate about; and assess and fine-tune the fits between those needs and their advantages to determine which customer needs they are most likely to be successful satisfying.  We believe that everyone has the potential to start his or her own business and make it successful.
 
 In later stages, we introduce entrepreneurs to customers and partners; help new ventures position and market themselves; introduce entrepreneurs to later-stage investors; and help negotiate terms. We accelerate growth by helping start-up teams develop, refine and execute business plans; scale their businesses; and identify and recruit top-performing team members. Our long experience and extensive affiliations in technology industries add context and connection to our counsel and capital.
 
+![John Chisholm at Entrepreneurship Roundtable with President Clinton](assets/clinton.jpg)
+*John Chisholm at Entrepreneurship Roundtable with President Clinton*
 
-John Chisholm at Entrepreneurship Roundtable with President Clinton
-
-Globally, we promote entrepreneurship to drive economic growth in the developing world and advances in quality of life in the developed world.  We do this by advising global leaders and policy makers; promoting freedom and free markets; and by raising concerns when regulation stifles entrepreneurship and innovation, reinforces the positions of entrenched market players at the expense of new entrants, and increases incentives to shift jobs elsewhere.
+Globally, we promote entrepreneurship to drive economic growth in the developing world and advances in quality of life in the developed world.  We do this by advising global leaders and policy makers; promoting freedom and free markets; and by raising concerns when regulation stifles entrepreneurship and innovation, reinforces the positions of entrenched market players at the expense of new entrants, and increases incentives to shift jobs elsewhere. 

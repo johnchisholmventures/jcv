@@ -21,7 +21,9 @@
     "react-dom": "^16.13.0",
     "react-youtube": "^7.11.2",
     "remark": "11.0.2",
+    "remark-embed-images": "^2.0.0",
     "remark-html": "10.0.0",
+    "remark-images": "^2.0.0",
     "sass": "^1.26.5"
   },
   "devDependencies": {

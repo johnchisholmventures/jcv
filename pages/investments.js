@@ -13,12 +13,13 @@ const withLink = (component, target) => (
   </a>
 )
 
-const Investment = ({picture, name, site}) => {
+const Investment = ({picture, name, site, description}) => {
 
   const content = (
     <>
       <img className='w-64 mx-auto' src={picture} />
       <p className='text-default-grey text-lg'>{name}</p>
+      { description && <p className='text-default-grey italic text-xs'>{description}</p>}
     </>
   )
 
@@ -46,12 +47,12 @@ const Investments = ({page}) => {
             <PostTitle>Our Investments</PostTitle>
             <RenderHtml>{page.content}</RenderHtml>
             <div className='flex flex-row flex-wrap justify-start'>
-              <Investment picture='/assets/investments/cast_app.png' name='Cast.app' site='https://cast.app/'/>
-              <Investment picture='/assets/investments/hifive.png' name='Formerly Parley Labs' site='http://highfive.com/'/>
+              <Investment picture='/assets/investments/cast_app.png' name='Cast.app' site='https://cast.app/' description='Reports you can read, listen to, or watch'/>
+              <Investment picture='/assets/investments/hifive.png' name='Formerly Parley Labs' site='http://highfive.com/' description='Turn any room into a high-res video conferencing center'/>
               <Investment picture='/assets/investments/customersat.png' name='Now part of ConfirmIt'/>
               <Investment picture='/assets/investments/decisive_technology.png' name='Now part of Google'/>
               <Investment picture='/assets/investments/pyze.png' name='Pyze Inc.' site='http://www.pyze.com/'/>
-              <Investment picture='/assets/investments/qnect.jpg' name='Qnect' site='http://www.qnect.com/'/>
+              <Investment picture='/assets/investments/qnect.jpg' name='Qnect' site='http://www.qnect.com/' description='Disrupting steel structure construction with fast 3D model connections'/>
             </div>
         </Container>
       </Layout>
