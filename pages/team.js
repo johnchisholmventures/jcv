@@ -5,9 +5,13 @@ import TeamSection from '../components/team-section'
 import PostTitle from '../components/post-title'
 import SectionSeparator from '../components/section-separator'
 import {getPageContent, johnFirst} from '../lib/api'
-import markdownToHtml from '../lib/markdownToHtml'
+import renderToString from 'next-mdx-remote/render-to-string'
+import hydrate from 'next-mdx-remote/hydrate'
+import mdxComponents from '../components/mdx'
+import PostBody from '../components/post-body'
 
 export default function Team({persons}) {
+  
   return (
     <>
       <Layout>
@@ -20,7 +24,7 @@ export default function Team({persons}) {
               persons.map((person, index)=> (
                 <div key={index}>
                   <TeamSection picture={person.picture} name={person.name} twitter={person.twitter} linkedIn={person.linkedIn}>
-                    {person.content}
+                    {hydrate(person.mdxSource, mdxComponents)}
                   </TeamSection>
                   {
                     index !== persons.length -1
@@ -40,7 +44,7 @@ export default function Team({persons}) {
 
 export async function getStaticProps() {
   const persons = await Promise.all(getPageContent('team', ['name', 'picture', 'twitter','linkedIn', 'content', 'slug'])
-    .map(async person => ({...person, content: await markdownToHtml(person.content)})))
+    .map(async person => ({...person, mdxSource: await renderToString(person.content, mdxComponents)})))
   return {
     props: {
       persons: johnFirst(persons)

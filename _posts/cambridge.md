@@ -1,6 +1,6 @@
 ---
 title: 'Unleash Your Inner Company at Cambridge Judge Business School'
-excerpt: 'A presentation given to the Cambridge Judge Business School in England. John offered guidance on discovering, growing, scaling, and selling your ideal business.'
+excerpt: 'In this March, 2017 presentation at the Judge Business School Entrepreneurship Centre, University of Cambridge, England, John offered guidance on discovering, growing, scaling, and selling your ideal business.'
 date: '2020-03-16T05:35:07.322Z'
 author:
   name: John Chisholm
@@ -15,4 +15,4 @@ tags:
   - entrepreneurship
 ---
 
-In entrepreneurship, where do you start? How important is a co-founder, and what should you look for? How can you best leverage technology? When are the best times to raise money? How can you scale your business? Practical tips for starting your own business.
+In this March, 2017 presentation at the Judge Business School Entrepreneurship Centre, University of Cambridge, England, John offered guidance on discovering, growing, scaling, and selling your ideal business.

@@ -52,18 +52,23 @@ export default function HeroPost({articles}) {
       <div className="mb-8 md:mb-16">
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={125}
+          naturalSlideHeight={200}
           totalSlides={articles.length}
         >
           <div className='flex flex-row justify-between'>
             <h2 className="mb-2 text-xl md:text-2xl font-bold tracking-tighter leading-tight">
               Featured Articles
             </h2>
-            <Button.Group size='small'>
-              <ButtonBack><Button color='default-purple'>Previous</Button></ButtonBack>
-              <span className='w-2'></span>
-              <ButtonNext><Button color='default-purple'>Next</Button></ButtonNext>
+            <Button.Group>
+              {/* Bit of a hack here. Manually using RBX classes for Carousel buttons */}
+              <ButtonBack className='button is-default-purple is-small'>Previous</ButtonBack>
+              <ButtonNext className='button is-default-purple is-small'>Next</ButtonNext>
             </Button.Group>
+            {/* <Button.Group size='small'>
+              >
+              <span className='w-2'></span>
+              <Button color='default-purple'></Button>
+            </Button.Group> */}
           </div>
           <Slider>
             {

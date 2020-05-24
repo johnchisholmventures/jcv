@@ -7,7 +7,7 @@ const MainNav = () => {
     const isActive = (target) => pathname.split('/')[1] === target ? true: false
     return (
         <Navbar>
-            <Container className='py-12'>
+            <Container className='py-6 md:py-12'>
                 <Navbar.Brand>
                     <Link href='/'>
                     <Navbar.Item>

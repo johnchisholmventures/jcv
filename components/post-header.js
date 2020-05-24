@@ -19,7 +19,11 @@ export default function PostHeader({ title, coverImage, date, author, youtubeId 
         {
           youtubeId
           ? <FeaturedVideo id={youtubeId} />
-          : <CoverImage title={title} src={coverImage} />
+          : (
+            coverImage
+            ? <CoverImage title={title} src={coverImage} />
+            : null
+          )
         }
       </div>
     </>

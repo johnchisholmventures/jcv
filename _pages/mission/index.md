@@ -6,7 +6,6 @@ We help entrepreneurs pursue their passions; focus on what they love to do and d
 
 In later stages, we introduce entrepreneurs to customers and partners; help new ventures position and market themselves; introduce entrepreneurs to later-stage investors; and help negotiate terms. We accelerate growth by helping start-up teams develop, refine and execute business plans; scale their businesses; and identify and recruit top-performing team members. Our long experience and extensive affiliations in technology industries add context and connection to our counsel and capital.
 
-![John Chisholm at Entrepreneurship Roundtable with President Clinton](assets/clinton.jpg)
-*John Chisholm at Entrepreneurship Roundtable with President Clinton*
+<Image src='assets/clinton.jpg' description='John Chisholm at Entrepreneurship Roundtable with President Clinton'/>
 
 Globally, we promote entrepreneurship to drive economic growth in the developing world and advances in quality of life in the developed world.  We do this by advising global leaders and policy makers; promoting freedom and free markets; and by raising concerns when regulation stifles entrepreneurship and innovation, reinforces the positions of entrenched market players at the expense of new entrants, and increases incentives to shift jobs elsewhere. 

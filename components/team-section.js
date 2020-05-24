@@ -2,9 +2,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Column, Image, Icon } from 'rbx'
-import markdownStyles from './markdown-styles.module.css'
+import PostBody from './post-body'
 
-const TeamCard = ({picture, name, twitter, linkedIn, children}) => {
+const TeamSection = ({picture, name, twitter, linkedIn, children}) => {
     return (
         <Column.Group>
             <Column className='text-center'>
@@ -24,14 +24,11 @@ const TeamCard = ({picture, name, twitter, linkedIn, children}) => {
                 </div>
             </Column>
             <Column>
-            <div
-                className={markdownStyles['markdown']}
-                dangerouslySetInnerHTML={{ __html: children }}
-            />
+            <PostBody content={children}/>
             </Column>
         </Column.Group>
     )
 }
 
 
-export default TeamCard
+export default TeamSection

@@ -3,18 +3,15 @@ import Layout from '../components/layout'
 import Head from 'next/head'
 import PostTitle from '../components/post-title'
 import {getPageContent} from '../lib/api'
-import markdownToHtml from '../lib/markdownToHtml'
-import RenderHtml from '../components/render-html'
 import cn from 'classnames'
+import renderToString from 'next-mdx-remote/render-to-string'
+import hydrate from 'next-mdx-remote/hydrate'
+import mdxComponents from '../components/mdx'
+import PostBody from '../components/post-body'
 
-const withLink = (component, target) => (
-  <a href={target}>
-    {component}
-  </a>
-)
+const withLink = (component, target) => <a href={target}>{component}</a>
 
 const Investment = ({picture, name, site, description}) => {
-
   const content = (
     <>
       <img className='w-64 mx-auto' src={picture} />
@@ -37,6 +34,8 @@ const Investment = ({picture, name, site, description}) => {
 }
 
 const Investments = ({page}) => {
+  console.log("PAGE", page)
+  const content = hydrate(page.mdxSource, mdxComponents)
   return (
     <>
       <Layout>
@@ -45,7 +44,7 @@ const Investments = ({page}) => {
         </Head>
         <Container>
             <PostTitle>Our Investments</PostTitle>
-            <RenderHtml>{page.content}</RenderHtml>
+            <PostBody content={content}/>
             <div className='flex flex-row flex-wrap justify-start'>
               <Investment picture='/assets/investments/cast_app.png' name='Cast.app' site='https://cast.app/' description='Reports you can read, listen to, or watch'/>
               <Investment picture='/assets/investments/hifive.png' name='Formerly Parley Labs' site='http://highfive.com/' description='Turn any room into a high-res video conferencing center'/>
@@ -62,7 +61,7 @@ const Investments = ({page}) => {
 
 export async function getStaticProps() {
   const page = await Promise.all(getPageContent('investments', ['content'])
-    .map(async page => ({...page, content: await markdownToHtml(page.content)})))
+    .map(async page => ({...page, mdxSource: await renderToString(page.content, mdxComponents)})))
   return {
     props: {
       page: page[0]

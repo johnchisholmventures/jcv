@@ -3,10 +3,13 @@ import Layout from '../components/layout'
 import Head from 'next/head'
 import PostTitle from '../components/post-title'
 import {getPageContent} from '../lib/api'
-import markdownToHtml from '../lib/markdownToHtml'
-import RenderHtml from '../components/render-html'
+import renderToString from 'next-mdx-remote/render-to-string'
+import hydrate from 'next-mdx-remote/hydrate'
+import mdxComponents from '../components/mdx'
+import PostBody from '../components/post-body'
 
 const Mission = ({page}) => {
+  const content = hydrate(page.mdxSource, mdxComponents)
   return (
     <>
       <Layout>
@@ -15,7 +18,7 @@ const Mission = ({page}) => {
         </Head>
         <Container>
             <PostTitle>Our Mission</PostTitle>
-            <RenderHtml>{page.content}</RenderHtml>
+            <PostBody content={content} />
         </Container>
       </Layout>
     </>
@@ -24,7 +27,10 @@ const Mission = ({page}) => {
 
 export async function getStaticProps() {
   const page = await Promise.all(getPageContent('mission', ['content'])
-    .map(async page => ({...page, content: await markdownToHtml(page.content)})))
+    .map(async page => ({
+      ...page,
+       mdxSource: await renderToString(page.content, mdxComponents)
+    })))
   return {
     props: {
       page: page[0]

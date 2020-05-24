@@ -1,5 +1,5 @@
 ---
-title: '“How Western Civilization Enabled Silicon Valley”'
+title: 'How Western Civilization Enabled Silicon Valley'
 excerpt: 'Presented at “Western Civilisation Conference: The Sun Rises in the West II” which was hosted by the Mannkal Foundation in Australia.'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-03-16T05:35:07.322Z'
@@ -10,7 +10,6 @@ author:
 ogVideo:
   url: 'https://youtu.be/hy_BfLfwRCU'
 youtubeId: hy_BfLfwRCU
-featured: 2
 type: video
 tags: 
   - entrepreneurship

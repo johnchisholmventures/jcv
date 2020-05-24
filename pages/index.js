@@ -9,7 +9,6 @@ import { Column } from 'rbx'
 
 export default function Index({ allPosts }) {
   const featuredArticles = allPosts.filter(article => article.featured ).sort((a,b) => a.featured - b.featured )
-  console.log("FEATURED ARTICLE!", featuredArticles)
   return (
     <>
       <Layout>

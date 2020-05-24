@@ -8,11 +8,14 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
 import FeaturedVideo from '../../components/featured-video'
+import renderToString from 'next-mdx-remote/render-to-string'
+import hydrate from 'next-mdx-remote/hydrate'
+import mdxComponents from '../../components/mdx'
 
 export default function Post({ post, morePosts}) {
+  const content = hydrate(post.mdxSource, mdxComponents)
+
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -28,7 +31,7 @@ export default function Post({ post, morePosts}) {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  JCV | {post.title}
                 </title>
                 {
                   post.ogImage && post.ogImage.url && <meta property="og:image" content={post.ogImage.url} />
@@ -45,12 +48,7 @@ export default function Post({ post, morePosts}) {
                   author={post.author}
                   youtubeId={post.youtubeId}
                 />
-                {/* {
-                  !post.youtubeId
-                  ? null
-                  : <FeaturedVideo id={post.youtubeId} /> 
-                } */}
-                <PostBody content={post.content} />
+                <PostBody content={content} />
               </div>
             </article>
           </>
@@ -72,13 +70,13 @@ export async function getStaticProps({ params }) {
     'type',
     'youtubeId'
   ])
-  const content = await markdownToHtml(post.content || '')
+  const mdxSource = await renderToString(post.content || '', mdxComponents)
 
   return {
     props: {
       post: {
         ...post,
-        content,
+        mdxSource,
       },
     },
   }
