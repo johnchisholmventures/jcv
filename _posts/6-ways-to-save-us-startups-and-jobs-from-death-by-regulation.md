@@ -9,7 +9,7 @@ author:
   bio: '/team'
 ogImage:
   url: '/assets/blog/covers/regulation.jpg'
-type: essay
+type: article
 tags: 
   - governance
   - regulation

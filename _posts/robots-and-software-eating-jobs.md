@@ -9,7 +9,7 @@ author:
   bio: '/team'
 ogImage:
   url: '/assets/blog/covers/machines.jpg'
-type: 'essay'
+type: 'article'
 tags:
   - innovation
   - automation

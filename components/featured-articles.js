@@ -5,6 +5,7 @@ import Link from 'next/link'
 import FeaturedVideo from './featured-video'
 import {Button} from 'rbx'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
+import {italicizeWord} from '../lib/util'
 
 const ArticlePreview = ({article}) => {
   const {
@@ -25,18 +26,18 @@ const ArticlePreview = ({article}) => {
           : <FeaturedVideo id={youtubeId} />
         }
       </div>
-      <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8">
-        <div className='border-l-8 border-default-purple hover:bg-gray-200 '>
+      <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 -mt-2">
+        <div className='border-l-8 border-default-purple hover:bg-gray-200 mt-2'>
           <div className='pl-2'> 
-            <h3 className="mb-2 text-4xl lg:text-6xl leading-tight">
-              <Link as={`/posts/${slug}`} href="/posts/[slug]">
-                <a className='text-default-grey hover:text-default-grey'>{title}</a>
+            <h3 className="mb-2 text-4xl lg:text-4xl leading-tight">
+              <Link href={`/posts/${slug}`}>
+                <a className='text-default-grey hover:text-default-grey'>{italicizeWord('Unleash Your Inner Company', title)}</a>
               </Link>
             </h3>
             <span className='italic'><DateFormater dateString={date} /> </span>
           </div>
         </div>
-        <div>
+        <div className='mt-2'>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
         </div>
       </div>
@@ -57,7 +58,7 @@ export default function HeroPost({articles}) {
         >
           <div className='flex flex-row justify-between'>
             <h2 className="mb-2 text-xl md:text-2xl font-bold tracking-tighter leading-tight">
-              Featured Articles
+              Featured
             </h2>
             <Button.Group>
               {/* Bit of a hack here. Manually using RBX classes for Carousel buttons */}

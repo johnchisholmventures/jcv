@@ -9,10 +9,10 @@ author:
   bio: '/team'
 ogImage:
   url: '/assets/blog/covers/interview.jpg'
-type: 'essay'
+type: 'article'
 tags:
   - entrepreneurship
-  - biography
+  - interviews
 ---
 
 In this candid interview, John discusses how getting fired led him to start his first company, the approach he uses to assess start-ups, the importance of psychology in entrepreneurship, and more.

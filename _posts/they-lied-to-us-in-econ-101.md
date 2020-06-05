@@ -9,7 +9,7 @@ author:
   bio: '/team'
 ogImage:
   url: '/assets/blog/covers/fractal.jpg'
-type: 'essay'
+type: 'article'
 tags:
   - innovation
   - automation

@@ -1,14 +1,15 @@
 import PostPreview from './post-preview'
 import { Button } from 'rbx'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon } from 'rbx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
 import { capitalizeFirst } from '../lib/util'
+import _intersection from 'lodash.intersection'
 
-const ArticleTag = ({tag, update}) => {
+const ArticleTag = ({tag, update, activeTag}) => {
   return (
-    <Button onClick={() => update(tag)} color='default-purple'>
+    <Button state={activeTag === tag ? 'active' : ''} onClick={() => update(tag)} >
       {
         !(tag === 'video')
         ? null
@@ -37,7 +38,7 @@ const postsToTagsDir = posts => {
   return posts.reduce((acc, post) => {
     if(!post.tags) return acc
     // create an all articles tag
-    if(!acc['all articles']) acc['all articles'] = posts.map(post => post.slug)
+    if(!acc['all']) acc['all'] = posts.map(post => post.slug)
     post.tags.forEach(tag => {
       !acc[tag]
       ? acc[tag] = [post.slug]
@@ -52,6 +53,7 @@ const postsToTypeDir = posts => {
     if(!post.type) return acc
     // create an all articles tag
     const type = post.type
+    if(!acc['all']) acc['all'] = posts.map(post => post.slug)
     !acc[type]
     ? acc[type] = [post.slug]
     : acc[type] = [...acc[type], post.slug]
@@ -60,32 +62,45 @@ const postsToTypeDir = posts => {
 }
 
 export default function MoreArticles({ posts }) {
-  const [activeArticles, _updateActiveArticles] = useState(posts)
+  const [typeFilter, updateTypeFilter] = useState('article')
+  const [tagFilter, updateTagFilter] = useState('all')
 
+  // Build reference-able directories
   const postsDir = postsToDir(posts)
   const tagsDir = postsToTagsDir(posts)
   const typesDir = postsToTypeDir(posts)
-  
-  const updateActiveArticles = activeDir => tag => {
-      const activeArticleSlugs = activeDir[tag] || []
-      
-      const activeArticles = activeArticleSlugs.map(slug => postsDir[slug])
-      return activeArticles.length > 0
-      ? _updateActiveArticles(activeArticles)
-      : _updateActiveArticles([])
+
+  const filteredItems = () => {
+    const typeSlugs = typesDir[typeFilter]
+    const tagSlugs = tagsDir[tagFilter]
+    const activeSlugs = _intersection(typeSlugs, tagSlugs)
+    return activeSlugs.map(slug => postsDir[slug])
   }
+
+
+
+
+
+  // const initialValue = applyFilters({tag:tagFilter, type:typeFilter})
+  // const [activeItems, updateActiveItems] = useState(initialValue)
+
+  // useEffect(() => {
+  //   console.log("ACTIVE ITEMS", activeItems)
+  //   const activeItems = applyFilters({type:typeFilter, tag:tagFilter})
+  //   updateActiveItems(activeItems)
+  // },[typeFilter, tagFilter])
 
   return (
     <section>
       <div className='mb-4'>
         <h2 className="mb-2 text-xl md:text-2xl font-bold tracking-tighter leading-tight">
-          More Articles
+          Resources
         </h2>
         <h1 className='text-xs italic'>By type</h1>
         <div>
           <Button.Group className='py-2 pb-4' size='small'>
             {
-              Object.keys(typesDir).map(tag => <ArticleTag key={tag} tag={tag} update={updateActiveArticles(typesDir)}/>)
+              Object.keys(typesDir).map(tag => <ArticleTag activeTag={typeFilter} key={tag} tag={tag} update={updateTypeFilter}/>)
             }
           </Button.Group>
         </div>
@@ -93,26 +108,28 @@ export default function MoreArticles({ posts }) {
         <div>
           <Button.Group className='py-2' size='small'>
             {
-              Object.keys(tagsDir).map(tag => <ArticleTag key={tag} tag={tag} update={updateActiveArticles(tagsDir)}/>)
+              Object.keys(tagsDir).map(tag => <ArticleTag activeTag={tagFilter} key={tag} tag={tag} update={updateTagFilter}/>)
             }
           </Button.Group>
         </div>
       </div>
       <div className="grid grid-cols-1 md:col-gap-16 lg:col-gap-32 row-gap-8 mb-32">
         {
-          activeArticles && activeArticles.length <= 0
-          ? null
-          : (activeArticles.map( article => (
-            <PostPreview
-              key={article.slug}
-              title={article.title}
-              coverImage={article.coverImage}
-              date={article.date}
-              author={article.author}
-              slug={article.slug}
-              excerpt={article.excerpt}
-            />
-          )))
+          !(filteredItems && filteredItems().length)
+          ? <h1 className='italic'>No resources...</h1>
+          : (
+            filteredItems().map( article => (
+              <PostPreview
+                key={article.slug}
+                title={article.title}
+                coverImage={article.coverImage}
+                date={article.date}
+                author={article.author}
+                slug={article.slug}
+                excerpt={article.excerpt}
+              />)
+            )
+          )
         }
       </div>
     </section>

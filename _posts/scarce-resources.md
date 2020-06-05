@@ -9,7 +9,7 @@ author:
   bio: '/team'
 ogImage:
   url: '/assets/blog/covers/wireless.jpg'
-type: 'essay'
+type: 'article'
 tags:
   - innovation
   - economics

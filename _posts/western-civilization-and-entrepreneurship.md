@@ -11,8 +11,10 @@ ogVideo:
   url: 'https://youtu.be/hy_BfLfwRCU'
 youtubeId: hy_BfLfwRCU
 type: video
+featured: 2
 tags: 
+  - governance
   - entrepreneurship
 ---
 
-In entrepreneurship, where do you start? How important is a co-founder, and what should you look for? How can you best leverage technology? When are the best times to raise money? How can you scale your business? Practical tips for starting your own business.
+Presented at “Western Civilisation Conference: The Sun Rises in the West II” which was hosted by the Mannkal Foundation in Australia.

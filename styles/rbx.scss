@@ -36,3 +36,8 @@ a.navbar-item.is-active {
     color: $default-purple;
     font-weight: bold;
 }
+
+.button.is-active {
+    background-color: $default-purple;
+    color: white;
+}
