@@ -26,7 +26,8 @@ const MainNav = () => {
                     <Link href='/mission'><Navbar.Item active={isActive('mission')}>Mission</Navbar.Item></Link>
                     <Link href='/investments'><Navbar.Item active={isActive('investments')}>Investments</Navbar.Item></Link>
                     <Link href='/team'><Navbar.Item active={isActive('team')}>Team</Navbar.Item></Link>
-                    <Navbar.Item  href='http://unleashyourinnercompany.com'>Unleash Your Inner Company</Navbar.Item>
+                    <Navbar.Item href='http://unleashyourinnercompany.com'><span className='italic'>Unleash</span></Navbar.Item>
+                    <Navbar.Item href='http://integralpoem.com'><span className='italic'>Integral</span></Navbar.Item>
                     </Navbar.Segment>
                 </Navbar.Menu>
             </Container>

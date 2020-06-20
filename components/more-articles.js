@@ -1,24 +1,12 @@
 import PostPreview from './post-preview'
 import { Button } from 'rbx'
 import { useState, useEffect } from 'react'
-import { Icon } from 'rbx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
 import { capitalizeFirst } from '../lib/util'
 import _intersection from 'lodash.intersection'
 
 const ArticleTag = ({tag, update, activeTag}) => {
   return (
     <Button state={activeTag === tag ? 'active' : ''} onClick={() => update(tag)} >
-      {
-        !(tag === 'video')
-        ? null
-        : (
-          <Icon>
-            <FontAwesomeIcon icon={faYoutube} />
-          </Icon>
-        )
-      }
       <span>{capitalizeFirst(tag)}</span>
     </Button>
   )
@@ -78,9 +66,6 @@ export default function MoreArticles({ posts }) {
   }
 
 
-
-
-
   // const initialValue = applyFilters({tag:tagFilter, type:typeFilter})
   // const [activeItems, updateActiveItems] = useState(initialValue)
 
@@ -118,7 +103,7 @@ export default function MoreArticles({ posts }) {
           !(filteredItems && filteredItems().length)
           ? <h1 className='italic'>No resources...</h1>
           : (
-            filteredItems().map( article => (
+            filteredItems().slice().sort((a, b) => new Date(b.date) - new Date(a.date)).map( article => (
               <PostPreview
                 key={article.slug}
                 title={article.title}

@@ -34,7 +34,7 @@ const ArticlePreview = ({article}) => {
                 <a className='text-default-grey hover:text-default-grey'>{italicizeWord('Unleash Your Inner Company', title)}</a>
               </Link>
             </h3>
-            <span className='italic'><DateFormater dateString={date} /> </span>
+            <span className='italic'><DateFormater dateString={date} /></span>
           </div>
         </div>
         <div className='mt-2'>
