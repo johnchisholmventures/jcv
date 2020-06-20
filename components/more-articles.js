@@ -112,6 +112,7 @@ export default function MoreArticles({ posts }) {
                 author={article.author}
                 slug={article.slug}
                 excerpt={article.excerpt}
+                externalLink={article.externalLink}
               />)
             )
           )

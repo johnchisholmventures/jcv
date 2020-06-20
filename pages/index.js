@@ -41,7 +41,8 @@ export async function getStaticProps() {
     'youtubeId',
     'featured',
     'type',
-    'tags'
+    'tags',
+    'externalLink'
   ])
   return {
     props: { allPosts },

@@ -1,20 +1,34 @@
 import Avatar from '../components/avatar'
 import DateFormater from '../components/date-formater'
 import CoverImage from './cover-image'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { Title } from 'rbx'
 import { italicizeWord } from '../lib/util'
+
+const Link = ({external = false, href, children}) => {
+  console.log("EXTERNAL LINK", external)
+  return (
+    <>
+      {
+        external
+        ? <a href={href}>{children}</a>
+        : <NextLink href={href}>{children}</NextLink>
+      }
+    </>
+  )
+}
 
 export default function PostPreview({
   title,
   coverImage,
   date,
   excerpt,
+  externalLink,
   author,
   slug,
 }) {
   return (
-    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+    <Link external={externalLink ? true : false} href={externalLink ? externalLink : '/posts/[slug]'}>
       <div className='hover:bg-gray-200'>
         <a className='text-default-grey hover:text-default'>
           <div>
