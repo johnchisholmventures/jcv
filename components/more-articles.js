@@ -50,7 +50,7 @@ const postsToTypeDir = posts => {
 }
 
 export default function MoreArticles({ posts }) {
-  const [typeFilter, updateTypeFilter] = useState('article')
+  const [typeFilter, updateTypeFilter] = useState('all')
   const [tagFilter, updateTagFilter] = useState('all')
 
   // Build reference-able directories

@@ -6,13 +6,12 @@ import { Title } from 'rbx'
 import { italicizeWord } from '../lib/util'
 
 const Link = ({external = false, href, children}) => {
-  console.log("EXTERNAL LINK", external)
   return (
     <>
       {
         external
-        ? <a href={href}>{children}</a>
-        : <NextLink href={href}>{children}</NextLink>
+        ? <a className='text-default-grey hover:text-default' href={href}>{children}</a>
+        : <NextLink href={href}><a className='text-default-grey hover:text-default'>{children}</a></NextLink>
       }
     </>
   )
@@ -28,16 +27,16 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <Link external={externalLink ? true : false} href={externalLink ? externalLink : '/posts/[slug]'}>
+    
       <div className='hover:bg-gray-200'>
-        <a className='text-default-grey hover:text-default'>
+        <Link external={externalLink ? true : false} href={externalLink ? externalLink : `/posts/${slug}`}>
           <div>
             <h3 className='text-xl leading-snug'>{italicizeWord('Unleash Your Inner Company',title)}</h3>
             <span className='text-xs text-gray-500 italic'><DateFormater dateString={date}/></span>
             <h3 className='text-xs pt-1'>{italicizeWord('Unleash Your Inner Company',excerpt.split(' ').slice(0,30).join(' '))}{excerpt.split(' ').length <= 30 ? '' : '...'}</h3>
           </div>
-        </a>
+        </Link>
       </div>
-    </Link>
+    
   )
 }

@@ -44,6 +44,7 @@ export async function getStaticProps() {
     'tags',
     'externalLink'
   ])
+
   return {
     props: { allPosts },
   }

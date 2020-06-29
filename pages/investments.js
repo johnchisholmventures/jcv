@@ -34,7 +34,6 @@ const Investment = ({picture, name, site, description}) => {
 }
 
 const Investments = ({page}) => {
-  console.log("PAGE", page)
   const content = hydrate(page.mdxSource, mdxComponents)
   return (
     <>
