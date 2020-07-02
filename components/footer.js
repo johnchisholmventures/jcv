@@ -2,7 +2,6 @@ import Container from './container'
 import { Icon } from 'rbx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter'
-import { EXAMPLE_PATH } from '../lib/constants'
 
 export default function Footer() {
   return (

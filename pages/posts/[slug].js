@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
-import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
@@ -23,7 +22,6 @@ export default function Post({ post, morePosts}) {
   return (
     <Layout>
       <Container>
-        {/* <Header /> */}
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -38,6 +36,12 @@ export default function Post({ post, morePosts}) {
                 }
                 {
                   post.ogVideo && post.ogVideo.url && <meta property="og:video" content={post.ogVideo.url} />
+                }
+                {
+                  post.excerpt  && <meta
+                    name="description"
+                    content={post.excerpt}
+                  />
                 }
               </Head>
               <div className="max-w-xl mx-auto">

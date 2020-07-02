@@ -2,7 +2,7 @@
 title: '6 Ways To Save U.S. Startups And Jobs From Death By Regulation'
 excerpt: 'If the Internet makes it easier than ever to start a company, why are fewer of them getting started today?'
 coverImage: '/assets/blog/covers/regulation.jpg'
-date: '2020-03-16T05:35:07.322Z'
+date: '2013-08-06T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'

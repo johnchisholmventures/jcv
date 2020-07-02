@@ -2,7 +2,7 @@
 title: 'Interview with The Center for Ethics and Entrepreneurship'
 excerpt: 'In this candid interview, John discusses how getting fired led him to start his first company, the approach he uses to assess start-ups, the importance of psychology in entrepreneurship, and more.'
 coverImage: '/assets/blog/covers/interview.jpg'
-date: '2020-03-16T05:35:07.322Z'
+date: '2013-05-24T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'

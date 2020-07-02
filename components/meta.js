@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
-
 export default function Meta() {
   return (
     <Head>
@@ -22,21 +20,16 @@ export default function Meta() {
         href="/favicon/favicon-16x16.png"
       />
       <link rel="manifest" href="/favicon/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="/favicon/safari-pinned-tab.svg"
-        color="#000000"
-      />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="msapplication-TileColor" content="#642c90" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
+      <meta name="theme-color" content="#642c90" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content={`John Chisholm Ventures, a firm that is passionate about making the world a better place; and to help create market environments conducive to entrepreneurship worldwide.`}
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content='assets/jcv_site_base_image.png' />
     </Head>
   )
 }

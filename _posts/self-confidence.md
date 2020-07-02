@@ -1,7 +1,7 @@
 ---
 title: How to Deliberately Build Your Self-Confidence
 excerpt: 'In this December, 2019 MIT Startup Bootcamp webinar, John discusses how to deliberately build your self-confidence to keep you going through tough times.  '
-date: '2020-03-16T05:35:07.322Z'
+date: '2019-11-05T05:35:07.322Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'

@@ -15,7 +15,7 @@ export default function PostHeader({ title, coverImage, date, author, youtubeId 
           {/* <DateFormater dateString={date} /> */}
         </div>
       </div>
-      <div className="mb-8 md:mb-16 -mx-5 sm:mx-0">
+      <div className="mb-8 md:mb-16 sm:mx-0">
         {
           youtubeId
           ? <FeaturedVideo id={youtubeId} />

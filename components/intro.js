@@ -1,4 +1,3 @@
-import { CMS_NAME } from '../lib/constants'
 import Link from 'next/link'
 
 const NavLink = ({href, children}) => <Link href={href}><a className='ml-2'>{children}</a></Link>
