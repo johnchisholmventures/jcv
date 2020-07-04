@@ -1,10 +1,11 @@
+import React from 'react'
 import Avatar from './avatar'
 import DateFormater from './date-formater'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import FeaturedVideo from './featured-video'
 import {Button} from 'rbx'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, WithStore } from 'pure-react-carousel'
 import {italicizeWord} from '../lib/util'
 
 const ArticlePreview = ({article}) => {
@@ -18,7 +19,7 @@ const ArticlePreview = ({article}) => {
     youtubeId
   } = article
   return (
-    <>
+    <div className='h-8'>
       <div className='mb-8'>
         {
           !youtubeId
@@ -26,6 +27,15 @@ const ArticlePreview = ({article}) => {
           : <FeaturedVideo id={youtubeId} />
         }
       </div>
+    </div>
+  )
+}
+
+class _HeroDescription extends React.Component {
+  render() {
+    const {articles, currentSlide} = this.props
+    const {slug, date, title, excerpt} = articles[currentSlide]
+    return (
       <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 -mt-2">
         <div className='border-l-8 border-default-purple hover:bg-gray-200 mt-2'>
           <div className='pl-2'> 
@@ -41,19 +51,20 @@ const ArticlePreview = ({article}) => {
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
         </div>
       </div>
-    </>
-  )
+    )
+  }
 }
 
+const HeroDescription = WithStore(_HeroDescription, state => ({currentSlide: state.currentSlide}))
 
 
 export default function HeroPost({articles}) {
   return (
-    <section>
-      <div className="mb-8 md:mb-16">
+    <section className='pb-12'>
+      {/* <div className="mb-8 md:mb-16"> */}
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={200}
+          naturalSlideHeight={60}
           totalSlides={articles.length}
         >
           <div className='flex flex-row justify-between'>
@@ -80,8 +91,9 @@ export default function HeroPost({articles}) {
               ))
             }
           </Slider>
+          <HeroDescription articles={articles}/>
         </CarouselProvider>
-      </div>
+      {/* </div> */}
     </section>
   )
 }
