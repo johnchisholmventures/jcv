@@ -21,7 +21,7 @@ export default function Index({ allPosts }) {
         <Container>
           <div className='hero-image mb-12 hidden sm:block md:h-48 lg:h-hero-lg bg-right-top'>
             <div className='hero-text hidden md:block md:text-xl lg:text-3xl'>
-              <h1>'"My misson today and for the past five years is to help aspiring entrepreneurs achieve the freedom, independence, and ability to do what they love through entrepreneurship."</h1>
+              <h1>Our mission today and for the past ten years has been to help experienced and aspiring entrepreneurs alike achieve the freedom, independence, and ability to do what they love, and make the world a better place, through successful entrepreneurship.</h1>
             </div>
           </div>
           <FeaturedArticles articles={featuredArticles} />
