@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function CoverImage({ title, src, slug }) {
   const image = (
     <img
-      src={src}
+      src={src ? src : '/assets/jcv_site_base_image.png'}
       alt={`Cover Image for ${title}`}
       style={{maxHeight: 'none'}}
       className={cn('shadow-small', {

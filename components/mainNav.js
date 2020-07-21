@@ -26,8 +26,8 @@ const MainNav = () => {
                     <Link href='/mission'><Navbar.Item active={isActive('mission')}>Mission</Navbar.Item></Link>
                     <Link href='/investments'><Navbar.Item active={isActive('investments')}>Investments</Navbar.Item></Link>
                     <Link href='/team'><Navbar.Item active={isActive('team')}>Team</Navbar.Item></Link>
-                    <Navbar.Item href='http://unleashyourinnercompany.com'><span className='italic'>Unleash</span></Navbar.Item>
-                    <Navbar.Item href='http://integralpoem.com'><span className='italic'>Integral</span></Navbar.Item>
+                    <Navbar.Item href='https://www.amazon.com/Unleash-Your-Inner-Company-Perseverance-ebook/dp/B0167HH5OI/ref=sr_1_2?dchild=1&keywords=unleash+your+inner+company&qid=1594217971&sr=8-2'><span className='italic'>Unleash</span></Navbar.Item>
+                    <Navbar.Item href='https://www.amazon.com/Integral-Mathematical-Odyssey-John-Chisholm/dp/0692076123/ref=sr_1_1?dchild=1&keywords=integral+mathematical+odyssey&qid=1594217999&sr=8-1'><span className='italic'>Integral</span></Navbar.Item>
                     </Navbar.Segment>
                 </Navbar.Menu>
             </Container>

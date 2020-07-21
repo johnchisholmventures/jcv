@@ -1,6 +1,13 @@
 module.exports = {
   theme: {
+    maxHeight: {
+      '1000px' : '1000px',
+      '500px' : '500px'
+    },
     extend: {
+      height:{
+        'hero-lg': '28rem'
+      },
       colors: {
         'default-purple' : '#642c90',
         'default-grey': '#4a4a4a',

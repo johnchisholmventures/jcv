@@ -10,7 +10,7 @@ const Link = ({external = false, href, children}) => {
     <>
       {
         external
-        ? <a className='text-default-grey hover:text-default' href={href}>{children}</a>
+        ? <a target='external' className='text-default-grey hover:text-default' href={href}>{children}</a>
         : <NextLink href={href}><a className='text-default-grey hover:text-default'>{children}</a></NextLink>
       }
     </>
