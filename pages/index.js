@@ -1,6 +1,7 @@
 import Container from '../components/container'
 import MoreArticles from '../components/more-articles'
 import FeaturedArticles from '../components/featured-articles'
+import Hero from '../components/hero'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
@@ -19,15 +20,7 @@ export default function Index({ allPosts }) {
           <title>JCV</title>
         </Head>
         <Container>
-          <div className='hero-image mb-12 hidden sm:block md:h-48 lg:h-hero-lg bg-right-top'>
-            <div className='hero-text hidden md:block md:text-xl lg:text-3xl'>
-              <h1>
-                We help experienced and aspiring entrepreneurs alike
-                achieve the freedom, independence, and ability to do what they love
-                to make the world a better place.
-              </h1>
-            </div>
-          </div>
+          <Hero />
           <FeaturedArticles articles={featuredArticles} />
           {allPosts.length > 0 && <MoreArticles posts={allPosts} />}
         </Container>

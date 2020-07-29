@@ -76,7 +76,7 @@ export default function MoreArticles({ posts }) {
   // },[typeFilter, tagFilter])
 
   return (
-    <section>
+    <section id='resources'>
       <div className='mb-4'>
         <h2 className="mb-2 text-xl md:text-2xl font-bold tracking-tighter leading-tight">
           Resources
