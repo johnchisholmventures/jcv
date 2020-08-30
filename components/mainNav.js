@@ -23,6 +23,7 @@ const MainNav = () => {
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <Navbar.Segment align="end">
+                    <Navbar.Item href="/#resources">Resources</Navbar.Item>
                     <Link href='/mission'><Navbar.Item active={isActive('mission')}>Mission</Navbar.Item></Link>
                     <Link href='/investments'><Navbar.Item active={isActive('investments')}>Investments</Navbar.Item></Link>
                     <Link href='/team'><Navbar.Item active={isActive('team')}>Team</Navbar.Item></Link>
