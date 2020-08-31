@@ -78,7 +78,7 @@ export default function MoreArticles({ posts }) {
   return (
     <section id='resources'>
       <div className='mb-4'>
-        <h2 className="mb-2 text-xl md:text-2xl font-bold tracking-tighter leading-tight">
+        <h2 className="mb-2 section-heading tracking-tighter leading-tight">
           Resources
         </h2>
         <h1 className='text-xs italic'>By type</h1>
