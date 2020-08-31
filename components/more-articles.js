@@ -6,8 +6,8 @@ import _intersection from 'lodash.intersection'
 
 const ArticleTag = ({tag, update, activeTag}) => {
   return (
-    <Button state={activeTag === tag ? 'active' : ''} onClick={() => update(tag)} >
-      <span>{capitalizeFirst(tag)}</span>
+    <Button  state={activeTag === tag ? 'active' : ''} onClick={() => update(tag)} >
+      <span className='text-lg'>{capitalizeFirst(tag)}</span>
     </Button>
   )
 }
@@ -77,11 +77,11 @@ export default function MoreArticles({ posts }) {
 
   return (
     <section id='resources'>
-      <div className='mb-4'>
-        <h2 className="mb-2 text-xl md:text-2xl font-bold tracking-tighter leading-tight">
+      <div className='mb-4 border-b-2'>
+        <h2 className="mb-2 section-heading tracking-tighter leading-tight">
           Resources
         </h2>
-        <h1 className='text-xs italic'>By type</h1>
+        <h1 className='text-lg italic'>Filter by type</h1>
         <div>
           <Button.Group className='py-2 pb-4' size='small'>
             {
@@ -89,7 +89,7 @@ export default function MoreArticles({ posts }) {
             }
           </Button.Group>
         </div>
-        <h1 className='text-xs italic'>By subject</h1>
+        <h1 className='text-lg italic'>Filter by subject</h1>
         <div>
           <Button.Group className='py-2' size='small'>
             {
@@ -121,13 +121,3 @@ export default function MoreArticles({ posts }) {
     </section>
   )
 }
-
-{/* <PostPreview
-key={post.slug}
-title={post.title}
-coverImage={post.coverImage}
-date={post.date}
-author={post.author}
-slug={post.slug}
-excerpt={post.excerpt}
-/> */}
