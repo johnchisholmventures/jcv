@@ -21,7 +21,7 @@ const Investment = ({picture, name, site, description}) => {
   )
 
   return (
-    <div className={cn({'hover:bg-gray-200':site}, 'w-full sm:w-1/2 md:w-1/3 relative p-4 box-border text-center self-center')}>
+    <div className={cn({'hover:bg-gray-100':site}, 'w-full sm:w-1/2 md:w-1/3 relative p-4 box-border text-center self-center')}>
       <div className='flex-1 text-default-grey'>
         {
           site
