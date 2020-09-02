@@ -8,7 +8,9 @@ const Hero = () => (
                 achieve the freedom, independence, and ability to do what they love
                 to make the world a better place.
             </h1>
-            <img src='assets/john-banner.jpg'/>
+            <div className='hero-image relative'>
+                <img className='block' src='assets/john-banner.jpg'/>
+            </div>
         </Container>
     </div>
 )

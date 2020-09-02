@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   theme: {
     maxHeight: {
       '1000px' : '1000px',

@@ -21,7 +21,6 @@ export default function Index({ allPosts }) {
         </Head>
         <Hero />
         <Container>
-
           <FeaturedArticles articles={featuredArticles} />
         </Container>
         <div className='bg-gray-100 py-12'>

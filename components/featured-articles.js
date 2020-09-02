@@ -36,7 +36,7 @@ const ArticlePreview = ({article}) => {
 
 class _HeroDescription extends React.Component {
   render() {
-    const {articles, currentSlide} = this.props
+    const {articles, currentSlide, buttons} = this.props
     const {slug, date, title, excerpt} = articles[currentSlide]
     return (
       <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 -mt-2 pt-8">
@@ -52,6 +52,9 @@ class _HeroDescription extends React.Component {
         </div>
         <div className='md:border-l-2 md:pl-8'>
           <p className="text-xl leading-relaxed mb-4">{excerpt}</p>
+          {
+            buttons
+          }
         </div>
       </div>
     )
@@ -74,7 +77,18 @@ export default function HeroPost({articles}) {
             <h2 className="section-heading ">
               Featured
             </h2>
-            <Button.Group>
+          </div>
+          <Slider>
+            {
+              articles.map((article, index) => (
+                <Slide key={index}>
+                  <ArticlePreview article={article} />
+                </Slide>
+              ))
+            }
+          </Slider>
+          <HeroDescription buttons={
+              <Button.Group>
               {/* Bit of a hack here. Manually using RBX class "button" for Carousel buttons */}
               <ButtonBack className='disabled:opacity-75 focus:outline-none text-2xl h-8 w-8 md:text-4xl md:h-12 md:w-12 font-bold rounded-full flex items-center justify-center bg-default-purple text-white mr-4'>
                 <Icon>
@@ -87,24 +101,8 @@ export default function HeroPost({articles}) {
                 </Icon>
               </ButtonNext>
             </Button.Group>
-            {/* <Button.Group size='small'>
-              >
-              <span className='w-2'></span>
-              <Button color='default-purple'></Button>
-            </Button.Group> */}
-          </div>
-          <Slider>
-            {
-              articles.map((article, index) => (
-                <Slide key={index}>
-                  <ArticlePreview article={article} />
-                </Slide>
-              ))
-            }
-          </Slider>
-          <HeroDescription articles={articles}/>
+          } articles={articles}/>
         </CarouselProvider>
-      {/* </div> */}
     </section>
   )
 }
