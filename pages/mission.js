@@ -5,11 +5,12 @@ import PostTitle from '../components/post-title'
 import {getPageContent} from '../lib/api'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
-import mdxComponents from '../components/mdx'
+import components from '../components/mdx'
 import PostBody from '../components/post-body'
 
-const Mission = ({page}) => {
-  const content = hydrate(page.mdxSource, mdxComponents)
+const Mission = ({source}) => {
+  console.log("MDX SOURCE");
+  const content = hydrate(source, {components})
   return (
     <>
       <Layout>
@@ -26,14 +27,11 @@ const Mission = ({page}) => {
 }
 
 export async function getStaticProps() {
-  const page = await Promise.all(getPageContent('mission', ['content'])
-    .map(async page => ({
-      ...page,
-       mdxSource: await renderToString(page.content, mdxComponents)
-    })))
+  const page = await getPageContent('mission', ['content'])
+
   return {
     props: {
-      page: page[0]
+      source: await renderToString(page[0].content, {components})
     },
   }
 }

@@ -13,16 +13,16 @@ export default function Layout({ children }) {
         <Alert>
           <div className='flex flex-row justify-center align-items-center'>
             <p className='pr-4'>
-              Are you an educator? Find out how to get <u>free</u> copies of <em>Unleash Your Inner Company</em> for your class  
+              Are you an educator? 
               <Link href='/educators'>
-                <a className='text-teal-400 hover:text-teal-500' href='/educators'> here</a>
+                <a className='text-teal-400 hover:text-teal-500' href='/educators'> Click here </a>
               </Link>
-              .
+              to find out how to get free copies of <em>Unleash Your Inner Company</em> for your class.
             </p>
           </div>
         </Alert>
         <MainNav />
-        <main>{children}</main>
+        <main className='py-12'>{children}</main>
       </div>
       <Footer />
     </>

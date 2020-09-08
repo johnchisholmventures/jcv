@@ -19,7 +19,7 @@
     "isomorphic-unfetch": "3.0.0",
     "lodash.intersection": "^4.4.0",
     "next": "latest",
-    "next-mdx-remote": "^0.4.0",
+    "next-mdx-remote": "^1.0.0",
     "pure-react-carousel": "^1.27.1",
     "rbx": "^2.2.0",
     "react": "^16.13.0",

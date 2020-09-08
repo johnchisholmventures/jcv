@@ -7,8 +7,7 @@ author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
   bio: '/team'
-ogImage:
-  url: '/assets/blog/covers/wireless.jpg'
+externalLink: 'https://www.forbes.com/sites/realspin/2013/06/27/if-you-remember-peak-oil-and-peak-wireless-spectrum-youre-laughing-now/#21c93fce155d'
 type: 'article'
 tags:
   - innovation
