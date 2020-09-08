@@ -75,7 +75,7 @@ export async function getStaticProps({ params }) {
     'youtubeId'
   ])
 
-  const mdxSource = await renderToString(post.content || '', {mdxComponents})
+  const mdxSource = await renderToString(post.content || '', {components})
 
   return {
     props: {
