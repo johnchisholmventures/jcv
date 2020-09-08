@@ -1,6 +1,6 @@
 ---
 title: 'Interview with Libre Mercado'
-excerpt: 'John interviews with Libre Mercado about how online education empowers the best students and teachers.'
+excerpt: 'Madrid-based Libre Mercado interviews John on how online education empowers students and the best teachers alike (scroll down page for English translation).'
 date: '2014-07-14T05:35:07.322Z'
 author:
   name: John Chisholm

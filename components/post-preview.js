@@ -26,13 +26,22 @@ export default function PostPreview({
   author,
   slug,
 }) {
+  
   return (
       <Link external={externalLink ? true : false} href={externalLink ? externalLink : `/posts/${slug}`}>
         <div className='bg-white py-6 px-4 hover:bg-purple-100 border'>
             <div>
-              <h3 className='text-xl md:text-2xl leading-snug text-default-purple'>{italicizeWord('Unleash Your Inner Company',title)}</h3>
+              {
+                title
+                ? <h3 className='text-xl md:text-2xl leading-snug text-default-purple'>{italicizeWord('Unleash Your Inner Company',title)}</h3>
+                : null
+              }
               <span className='text-xs text-gray-500 italic'><DateFormater dateString={date}/></span>
-              <h3 className='text-xs pt-1'>{italicizeWord('Unleash Your Inner Company',excerpt.split(' ').slice(0,30).join(' '))}{excerpt.split(' ').length <= 30 ? '' : '...'}</h3>
+              {
+                excerpt
+                ? <h3 className='text-xs pt-1'>{italicizeWord('Unleash Your Inner Company',excerpt.split(' ').slice(0,30).join(' '))}{excerpt.split(' ').length <= 30 ? '' : '...'}</h3>
+                : null
+              }
             </div>
         </div>
       </Link>  

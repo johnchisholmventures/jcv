@@ -7,7 +7,7 @@ const MainNav = () => {
     const isActive = (target) => pathname.split('/')[1] === target ? true: false
     const activeStyle = 'border-b-2 border-default-purple'
     return (
-        <Navbar>
+        <Navbar className='mb-12'>
             <Container className='pt-3 md:pt-6'>
                 <Navbar.Brand>
                     <Link href='/'>

@@ -10,10 +10,10 @@ import Head from 'next/head'
 import FeaturedVideo from '../../components/featured-video'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
-import mdxComponents from '../../components/mdx'
+import components from '../../components/mdx'
 
 export default function Post({ post, morePosts}) {
-  const content = hydrate(post.mdxSource, mdxComponents)
+  const content = hydrate(post.mdxSource, {components})
 
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
@@ -74,7 +74,8 @@ export async function getStaticProps({ params }) {
     'type',
     'youtubeId'
   ])
-  const mdxSource = await renderToString(post.content || '', mdxComponents)
+
+  const mdxSource = await renderToString(post.content || '', {mdxComponents})
 
   return {
     props: {

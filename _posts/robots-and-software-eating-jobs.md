@@ -12,7 +12,6 @@ ogImage:
 type: 'article'
 tags:
   - innovation
-  - automation
   - economics
 ---
 
