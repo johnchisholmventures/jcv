@@ -6,7 +6,7 @@ import {getPageContent} from '../lib/api'
 import cn from 'classnames'
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
-import mdxComponents from '../components/mdx'
+import components from '../components/mdx'
 import PostBody from '../components/post-body'
 
 const withLink = (component, target) => <a href={target}>{component}</a>
@@ -21,7 +21,7 @@ const Investment = ({picture, name, site, description}) => {
   )
 
   return (
-    <div className={cn({'hover:bg-gray-200':site}, 'w-full sm:w-1/2 md:w-1/3 relative p-4 box-border text-center self-center')}>
+    <div className={cn({'hover:bg-gray-100':site}, 'w-full sm:w-1/2 md:w-1/3 relative p-4 box-border text-center self-center')}>
       <div className='flex-1 text-default-grey'>
         {
           site
@@ -34,7 +34,7 @@ const Investment = ({picture, name, site, description}) => {
 }
 
 const Investments = ({page}) => {
-  const content = hydrate(page.mdxSource, mdxComponents)
+  const content = hydrate(page.mdxSource, {components})
   return (
     <>
       <Layout>
@@ -60,7 +60,7 @@ const Investments = ({page}) => {
 
 export async function getStaticProps() {
   const page = await Promise.all(getPageContent('investments', ['content'])
-    .map(async page => ({...page, mdxSource: await renderToString(page.content, mdxComponents)})))
+    .map(async page => ({...page, mdxSource: await renderToString(page.content, {components})})))
   return {
     props: {
       page: page[0]

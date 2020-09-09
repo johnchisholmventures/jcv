@@ -7,9 +7,6 @@ import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import Header from '../components/header'
-import { Column } from 'rbx'
-
-
 
 export default function Index({ allPosts }) {
   const featuredArticles = allPosts.filter(article => article.featured ).sort((a,b) => a.featured - b.featured )
@@ -19,11 +16,15 @@ export default function Index({ allPosts }) {
         <Head bgImage='/assets/banner.jpg'>
           <title>JCV</title>
         </Head>
+        <Hero />
         <Container>
-          <Hero />
           <FeaturedArticles articles={featuredArticles} />
-          {allPosts.length > 0 && <MoreArticles posts={allPosts} />}
         </Container>
+        <div className='bg-gray-100 py-12 -mb-12'>
+          <Container>
+            {allPosts.length > 0 && <MoreArticles posts={allPosts} />}
+          </Container>
+        </div>
       </Layout>
     </>
   )

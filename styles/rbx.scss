@@ -42,17 +42,3 @@ a.navbar-item.is-active {
     color: white;
 }
 
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba($default-purple, 0.5), rgba($default-purple, 0.6)), url("/assets/john-banner.jpg");
-  /* Position and center the image to scale nicely on all screens */
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
-  text-shadow: 3px 3px 5px rgba(0,0,0,0.9);
-  color: white;
-}
