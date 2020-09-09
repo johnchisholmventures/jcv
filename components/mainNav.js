@@ -7,14 +7,14 @@ const MainNav = () => {
     const isActive = (target) => pathname.split('/')[1] === target ? true: false
     const activeStyle = 'border-b-2 border-default-purple'
     return (
-        <Navbar className='mb-12'>
-            <Container className='pt-3 md:pt-6'>
+        <Navbar className='py-6'>
+            <Container >
                 <Navbar.Brand>
                     <Link href='/'>
                     <Navbar.Item>
                         <img
                             className='hero-image h-6 md:h-8 lg:h-10'
-                            src="/assets/logo.png"
+                            src="/assets/jcvlogowithline.png"
                             alt=""
                             role="presentation"
                         />

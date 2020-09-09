@@ -20,6 +20,14 @@ default-grey: #4a4a4a
     @apply relative;
 }
 
+.hero-text {
+    @apply text-white
+}
+
+.hero-text span {
+    color: #a861e0;
+}
+
 .hero-image:after {
     content: '';
     @apply absolute left-0 top-0 w-full h-full inline-block bg-gradient-to-r from-default-purple to-purple-500 opacity-50;
