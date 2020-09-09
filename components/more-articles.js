@@ -1,6 +1,6 @@
 import PostPreview from './post-preview'
 import { Button } from 'rbx'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { capitalizeFirst } from '../lib/util'
 import _intersection from 'lodash.intersection'
 
