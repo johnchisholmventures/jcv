@@ -1,6 +1,9 @@
-import {Navbar, Container} from 'rbx'
+import {Navbar, Container, Icon} from 'rbx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
 
 const MainNav = () => {
     const {pathname} = useRouter()
@@ -28,8 +31,8 @@ const MainNav = () => {
                         <Link href='/mission'><Navbar.Item className={`${isActive('mission') ? activeStyle : null}`} active={isActive('mission')}>Mission</Navbar.Item></Link>
                         <Link href='/investments'><Navbar.Item className={`${isActive('investments') ? activeStyle : null}`}  active={isActive('investments')}>Investments</Navbar.Item></Link>
                         <Link href='/team'><Navbar.Item className={`${isActive('team') ? activeStyle : null}`}  active={isActive('team')}>Team</Navbar.Item></Link>
-                        <Navbar.Item href='http://unleashyourinnercompany.com' target='_blank'><span className='italic'>Unleash</span></Navbar.Item>
-                        <Navbar.Item href='http://integralpoem.com' target='_blank'><span className='italic'>Integral</span></Navbar.Item>
+                        <Navbar.Item href='http://unleashyourinnercompany.com' target='_blank'><Icon className='text-sm'><FontAwesomeIcon icon={faArrowRight}/></Icon> Unleash</Navbar.Item>
+                        <Navbar.Item href='http://integralpoem.com' target='_blank'><Icon className='text-sm'><FontAwesomeIcon icon={faArrowRight}/></Icon>Integral</Navbar.Item>
                     </Navbar.Segment>
                 </Navbar.Menu>
             </Container>
