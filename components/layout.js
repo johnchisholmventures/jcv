@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         <Alert>
           <div className='flex flex-row justify-center align-items-center'>
             <p className='pr-4'>
-              <span className='font-bold'>Are you an educator?</span>
+              <span className='font-bold'>Do you teach entrepreneurship?</span>
               <Link href='/educators'>
                 <a className='text-teal-400 hover:text-teal-500' href='/educators'> Click here </a>
               </Link>
