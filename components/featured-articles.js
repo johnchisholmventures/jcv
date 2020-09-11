@@ -10,6 +10,7 @@ import {italicizeWord} from '../lib/util'
 import { Icon } from 'rbx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import cn from 'classnames'
 
 const ArticlePreview = ({article}) => {
   const {
@@ -36,19 +37,28 @@ const ArticlePreview = ({article}) => {
 
 class _HeroDescription extends React.Component {
   render() {
-    const {articles, currentSlide, buttons} = this.props
+    const {articles, currentSlide, buttons, children} = this.props
     const {slug, date, title, excerpt} = articles[currentSlide]
+
+    const HeroTitle = ({className}) => (
+      <h3 className={cn(className, 'mb-8 md:mb-2 text-4xl md:text-6xl leading-tight')}>
+        <Link href={`/posts/${slug}`}>
+          <a className='font-bold text-default-grey hover:text-default-grey'>{italicizeWord('Unleash Your Inner Company', title)}</a>
+        </Link>
+      </h3>
+    )
     return (
+      <>
+      <HeroTitle className='md:hidden mb-4 sm:'/>
+      {
+        children
+      }
       <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 -mt-2 pt-8">
-        <div className='border-l-8 border-default-purple hover:bg-gray-200 mb-8 md:mb-0'>
-          <div className='pl-2'> 
-            <h3 className="mb-2 text-6xl leading-tight">
-              <Link href={`/posts/${slug}`}>
-                <a className='text-default-grey hover:text-default-grey'>{italicizeWord('Unleash Your Inner Company', title)}</a>
-              </Link>
-            </h3>
-            <span className='italic text-xl'><DateFormater dateString={date} /></span>
-          </div>
+        <div className='hover:bg-gray-200 mb-4 md:mb-0'>
+        <div className={'md:py-2'}> 
+          <HeroTitle className='hidden md:inline-block'/>
+          <span className='italic text-xl'><DateFormater dateString={date} /></span>
+        </div>
         </div>
         <div className='md:border-l-2 md:pl-8'>
           <p className="text-xl leading-relaxed mb-4">{excerpt}</p>
@@ -57,6 +67,9 @@ class _HeroDescription extends React.Component {
           }
         </div>
       </div>
+      </>
+
+
     )
   }
 }
@@ -73,20 +86,11 @@ export default function HeroPost({articles}) {
           naturalSlideHeight={60}
           totalSlides={articles.length}
         >
-          <div className='flex flex-row justify-between items-center mb-12'>
-            <h2 className="section-heading ">
+          <div className='flex flex-row justify-between items-center'>
+            <h2 className="section-heading">
               Featured
             </h2>
           </div>
-          <Slider>
-            {
-              articles.map((article, index) => (
-                <Slide key={index}>
-                  <ArticlePreview article={article} />
-                </Slide>
-              ))
-            }
-          </Slider>
           <HeroDescription buttons={
               <Button.Group>
               {/* Bit of a hack here. Manually using RBX class "button" for Carousel buttons */}
@@ -101,7 +105,17 @@ export default function HeroPost({articles}) {
                 </Icon>
               </ButtonNext>
             </Button.Group>
-          } articles={articles}/>
+          } articles={articles}>
+            <Slider>
+              {
+                articles.map((article, index) => (
+                  <Slide key={index}>
+                    <ArticlePreview article={article} />
+                  </Slide>
+                ))
+              }
+            </Slider>            
+          </HeroDescription>
         </CarouselProvider>
     </section>
   )

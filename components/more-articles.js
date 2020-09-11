@@ -76,9 +76,9 @@ export default function MoreArticles({ posts }) {
   // },[typeFilter, tagFilter])
 
   return (
-    <section id='resources'>
+    <section style={{backgroundColor: '#f4f4f4'}} id='resources'>
       <div className='mb-4 border-b-2'>
-        <h2 className="mb-2 section-heading tracking-tighter leading-tight">
+        <h2 className="section-heading">
           Resources
         </h2>
         {/* <h1 className='text-lg italic'>Filter by type</h1>
@@ -98,7 +98,7 @@ export default function MoreArticles({ posts }) {
           </Button.Group>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:col-gap-16 lg:col-gap-32 row-gap-8 mb-32">
+      <div className="grid grid-cols-1 md:col-gap-16 lg:col-gap-32 row-gap-8 lg:mb-12">
         {
           !(filteredItems && filteredItems().length)
           ? <h1 className='italic'>No resources...</h1>
