@@ -10,7 +10,7 @@ module.exports = {
         'hero-lg': '28rem'
       },
       colors: {
-        'default-purple' : '#642c90',
+        'default-purple' : '#6632ff',
         'default-grey': '#4a4a4a',
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',

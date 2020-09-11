@@ -1,8 +1,5 @@
-import Avatar from '../components/avatar'
 import DateFormater from '../components/date-formater'
-import CoverImage from './cover-image'
 import NextLink from 'next/link'
-import { Title } from 'rbx'
 import { italicizeWord } from '../lib/util'
 
 const Link = ({external = false, href, children}) => {
@@ -29,11 +26,11 @@ export default function PostPreview({
   
   return (
       <Link external={externalLink ? true : false} href={externalLink ? externalLink : `/posts/${slug}`}>
-        <div className='bg-white py-6 px-4 hover:bg-purple-100 border'>
+        <div className='bg-white py-2 md:py-6 px-4 hover:bg-purple-100 rounded-lg'>
             <div>
               {
                 title
-                ? <h3 className='text-xl md:text-2xl leading-snug text-default-purple'>{italicizeWord('Unleash Your Inner Company',title)}</h3>
+                ? <h3 className='font-bold text-xl md:text-2xl leading-snug text-default-purple'>{italicizeWord('Unleash Your Inner Company',title)}</h3>
                 : null
               }
               <span className='text-xs text-gray-500 italic'><DateFormater dateString={date}/></span>

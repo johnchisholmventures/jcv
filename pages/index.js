@@ -20,7 +20,7 @@ export default function Index({ allPosts }) {
         <Container>
           <FeaturedArticles articles={featuredArticles} />
         </Container>
-        <div className='bg-gray-100 py-12 -mb-12'>
+        <div style={{backgroundColor: '#f4f4f4'}} className='py-12 -mb-12'>
           <Container>
             {allPosts.length > 0 && <MoreArticles posts={allPosts} />}
           </Container>
