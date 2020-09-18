@@ -13,7 +13,7 @@ const MainNav = () => {
                     <Link href='/'>
                     <Navbar.Item>
                         <img
-                            className='hero-image h-8 sm:h-12 md:h-12 lg:h-16'
+                            className='hero-image h-8 sm:h-12 md:h-12 lg:h-14'
                             src="/assets/jcv-logo.png"
                             alt=""
                             role="presentation"
