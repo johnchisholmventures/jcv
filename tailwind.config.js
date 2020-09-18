@@ -9,6 +9,9 @@ module.exports = {
       height:{
         'hero-lg': '28rem'
       },
+      width: {
+        'hero-text': '750px'
+      },
       colors: {
         'default-purple' : '#6632ff',
         'default-grey': '#4a4a4a',
