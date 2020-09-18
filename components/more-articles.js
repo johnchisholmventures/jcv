@@ -6,8 +6,8 @@ import _intersection from 'lodash.intersection'
 
 const ArticleTag = ({tag, update, activeTag}) => {
   return (
-    <Button rounded size={'large'} className={'tag'} state={activeTag === tag ? 'active' : ''} onClick={() => update(tag)} >
-      <span className='text-lg'>{capitalizeFirst(tag)}</span>
+    <Button rounded size={'large'} className='tag border-none' state={activeTag === tag ? 'active' : ''} onClick={() => update(tag)} >
+      <span className='text-lg font-bold'>{capitalizeFirst(tag)}</span>
     </Button>
   )
 }
@@ -77,7 +77,7 @@ export default function MoreArticles({ posts }) {
 
   return (
     <section style={{backgroundColor: '#f4f4f4'}} id='resources'>
-      <div className='mb-4 border-b-2'>
+      <div className='mb-4'>
         <h2 className="section-heading">
           Resources
         </h2>
@@ -91,7 +91,7 @@ export default function MoreArticles({ posts }) {
         </div>
         <h1 className='text-lg italic'>Filter by subject</h1> */}
         <div>
-          <Button.Group className='py-2' size='small'>
+          <Button.Group className='pt-2 pb-6' size='small'>
             {
               Object.keys(tagsDir).map(tag => <ArticleTag activeTag={tagFilter} key={tag} tag={tag} update={updateTagFilter}/>)
             }

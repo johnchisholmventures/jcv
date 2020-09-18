@@ -9,11 +9,11 @@ export default function Footer() {
       <Container>
         <div className="py-8 flex fex-col justify-between items-center">
           <div className='flex flex-row'>
-            <a className='mr-4' target='_blank' href='https://twitter.com/johndchisholm'>
-              <img className='w-8' src='/twitter.png' />
-            </a>
-            <a target='_blank' href=''>
+          <a className='mr-4' target='_blank' href='https://instagram.com/johndchisholm'>
               <img className='w-8' src='/instagram.png'/>
+            </a>
+            <a  target='_blank' href='https://twitter.com/johndchisholm'>
+              <img className='w-8' src='/twitter.png' />
             </a>
           </div>
           <h3 className="text-md font-bold lg:mb-0">
