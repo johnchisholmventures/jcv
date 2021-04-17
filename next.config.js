@@ -12,7 +12,7 @@ module.exports = {
         destination: '/pdfs/regulation.pdf',
       },
       {
-        source: '/deireport',
+        source: '/dei',
         destination: '/pdfs/deireport.pdf',
       },
       {
