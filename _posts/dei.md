@@ -18,6 +18,6 @@ tags:
 
 Findings, Conclusions, and Recommendations for MIT Leadership and the Corporation
 
-[Click here to read the report.](https://johnchisholmventures.com/deireport)
+[Click here to read the report.](https://johnchisholmventures.com/dei)
 
 [Click here to view the presentation.](https://johnchisholmventures.com/deipres)
