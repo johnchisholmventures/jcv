@@ -7,7 +7,7 @@ export default function CoverImage({ title, src, slug }) {
       src={src ? src : '/assets/jcv_site_base_image.png'}
       alt={`Cover Image for ${title}`}
       style={{maxHeight: 'none'}}
-      className={cn('shadow-small', {
+      className={cn('shadow-small w-full', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
     />

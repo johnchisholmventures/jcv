@@ -11,7 +11,7 @@ ogVideo:
   url: 'https://youtu.be/hy_BfLfwRCU'
 youtubeId: hy_BfLfwRCU
 type: video
-featured: 2
+featured: 3
 tags: 
   - governance
   - entrepreneurship

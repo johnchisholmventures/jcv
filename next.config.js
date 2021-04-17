@@ -10,6 +10,14 @@ module.exports = {
       {
         source: '/regulation',
         destination: '/pdfs/regulation.pdf',
+      },
+      {
+        source: '/deireport',
+        destination: '/pdfs/deireport.pdf',
+      },
+      {
+        source: '/deipres',
+        destination: '/pdfs/deipres.pdf',
       }
     ]
   },
