@@ -10,9 +10,10 @@ ogVideo:
   url: 'https://youtu.be/_RjZ7e1DbXo'
 youtubeId: _RjZ7e1DbXo
 type: video
-featured: 2
+featured: 1
 tags: 
   - entrepreneurship
+  - education
 ---
 
 In this March, 2017 presentation at the Judge Business School Entrepreneurship Centre, University of Cambridge, England, John offered guidance on discovering, growing, scaling, and selling your ideal business.
