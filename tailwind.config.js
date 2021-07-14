@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   important: true,
   theme: {
@@ -20,6 +22,7 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+        teal: colors.teal
       },
       spacing: {
         28: '7rem',
