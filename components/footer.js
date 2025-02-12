@@ -17,7 +17,7 @@ export default function Footer() {
             </a>
           </div>
           <h3 className="text-md font-bold lg:mb-0">
-            Copyright &#169; 2020
+            Copyright &#169; 2025
           </h3>
         </div>
       </Container>
