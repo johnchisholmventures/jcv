@@ -1,6 +1,6 @@
 ---
 title: "Don't Make Law: Let it Emerge, Learn, and Adapt"
-excerpt: ''
+excerpt: 'Presented at the 2024 Liberty International World Conference in Texas'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2025-02-12T05:35:07.322Z'
 author:
