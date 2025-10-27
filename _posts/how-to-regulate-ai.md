@@ -1,7 +1,7 @@
 ---
 title: 'How to Regulate AI (and other technologies that pose unknowable risks)'
-excerpt: 'Presented in September at Northwood University'
-date: '2025-10-25T23:35:07.322Z'
+excerpt: 'Presented at Northwood University, Midland, Michigan'
+date: '2025-09-16T00:00:00.000Z'
 author:
   name: John Chisholm
   picture: '/assets/blog/authors/chisholm.jpg'
@@ -17,4 +17,4 @@ tags:
   - regulation
 ---
 
-Presented in September at Northwood University
+Presented at Northwood University, Midland, Michigan
