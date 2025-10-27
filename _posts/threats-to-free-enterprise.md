@@ -1,6 +1,6 @@
 ---
 title: 'Threats to Free Enterprise and Innovation'
-excerpt: 'Presented at Nortwood University as part of the American tour of the Free Market Road Show'
+excerpt: 'Presented at Northwood University, Midland, Michigan'
 date: '2023-03-17T00:00:00.000Z'
 author:
   name: John Chisholm
@@ -17,4 +17,4 @@ tags:
   - regulation
 ---
 
-Presented at Northwood University as part of the American tour of the Free Market Road Show
+Presented at Northwood University, Midland, Michigan
