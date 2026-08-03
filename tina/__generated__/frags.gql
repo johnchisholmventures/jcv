@@ -1,0 +1,45 @@
+fragment PostParts on Post {
+  __typename
+  title
+  excerpt
+  date
+  coverImage
+  format
+  youtubeId
+  externalUrl
+  topics
+  featured
+  featuredOrder
+  draft
+  author {
+    __typename
+    name
+    picture
+  }
+  body
+}
+
+fragment TeamParts on Team {
+  __typename
+  name
+  picture
+  twitter
+  linkedIn
+  order
+  body
+}
+
+fragment InvestmentParts on Investment {
+  __typename
+  name
+  picture
+  site
+  description
+  order
+}
+
+fragment PageParts on Page {
+  __typename
+  title
+  body
+}

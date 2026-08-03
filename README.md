@@ -1,11 +1,70 @@
-The sorting of articles on the main page is controlled by the frontmatter in the posts under _posts
+# John Chisholm Ventures
 
-For Article types: 
-If you want to add an video then you must have type as 'video' and a 'YouTubeID' set in the frontMatter of the article. We'll only use YouTube as the video source. There will be a page for this, so it's best to put some content on that page with the link just in case.
-If the target is an external link, then add the href as externalLink in the frontmatter of the article.
+Next.js **App Router** site with **TinaCMS** (GitHub as the content database), set up per the [official Tina App Router guide](https://tina.io/docs/frameworks/next/app-router).
 
-For posting PDFs:
+> **Handoff / full project status:** see **[docs/PROJECT_SPEC.md](./docs/PROJECT_SPEC.md)** — what was done, what’s left (TinaCloud, Vercel preview, client sign-off), git branch plan, and restart prompt for a new agent session.
 
-Save the PDFs in /public/pdfs and then use the rewrite option in next.config.js to rewrite the incoming path (source) you would like to use (e.g. www.jcv.com/cv) to the target public file (destination) (e.g. /pdfs/john_cv_2020.pdf)
+## Stack
 
-Using a drafts folder as a holding place for posts that you want to depublish since if it exists in the _posts folder, it's going to get wrapped in on the everything tag. Could do a drafts funcitonality in the future, but don't really see a reason to now.
+- Next.js 15 (App Router)
+- React 18
+- TinaCMS 3 + `@tinacms/cli`
+- Tailwind CSS 4
+- Content: Markdown in `content/`
+
+## Local development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+- Site: http://localhost:3000  
+- Admin: http://localhost:3000/admin  
+
+`pnpm dev` runs `tinacms dev -c "next dev --turbopack"` so the local GraphQL content API is available while you work.
+
+### Without TinaCloud credentials
+
+Local mode indexes files on disk. Production editing for non-devs needs TinaCloud (free tier: 2 users).
+
+## Production (TinaCloud Free)
+
+1. Create a project at [app.tina.io](https://app.tina.io) and connect this GitHub repo  
+2. Set env vars on Vercel:
+
+   ```
+   NEXT_PUBLIC_TINA_CLIENT_ID=...
+   TINA_TOKEN=...
+   ```
+
+3. Build command: `pnpm build` → `tinacms build && next build`  
+4. Invite the second free user (John)  
+5. Open `https://your-domain/admin`
+
+## Content model
+
+| Collection | Path | Purpose |
+|------------|------|---------|
+| Resources / Posts | `content/posts/` | Articles, videos, external links |
+| Team | `content/team/` | Bios |
+| Investments | `content/investments/` | Portfolio cards |
+| Site pages | `content/pages/` | Mission, educators, investments intro |
+
+Media uploads go to `public/uploads/`.
+
+## Editor guide
+
+See [docs/EDITOR_GUIDE.md](./docs/EDITOR_GUIDE.md).
+
+## Data fetching (official pattern)
+
+Pages use the generated Tina client:
+
+```ts
+import { client } from '@/tina/__generated__/client'
+
+const { data } = await client.queries.postConnection()
+```
+
+Post detail pages use `useTina` on a client component for visual editing, as in the [App Router docs](https://tina.io/docs/frameworks/next/app-router).
