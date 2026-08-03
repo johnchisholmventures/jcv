@@ -1,7 +1,13 @@
-import Container from '@/components/Container'
-import FeaturedArticles from '@/components/FeaturedArticles'
-import Hero from '@/components/Hero'
-import MoreArticles from '@/components/MoreArticles'
+import BookFeature from '@/components/home/BookFeature'
+import Experience from '@/components/home/Experience'
+import FeaturedTalk from '@/components/home/FeaturedTalk'
+import HomeHero from '@/components/home/HomeHero'
+import RecognitionStrip from '@/components/home/RecognitionStrip'
+import SelectedVentures from '@/components/home/SelectedVentures'
+import SelectedWriting from '@/components/home/SelectedWriting'
+import SpeakingInvite from '@/components/home/SpeakingInvite'
+import SpeakingTopics from '@/components/home/SpeakingTopics'
+import Testimonials from '@/components/home/Testimonials'
 import { client } from '@/tina/__generated__/client'
 import {
   isDraft,
@@ -20,18 +26,20 @@ export default async function HomePage() {
     .sort(sortByDateDesc)
 
   const featured = posts.filter((p) => p.featured).sort(sortFeatured)
+  const writingSample = (featured.length ? featured : posts).slice(0, 3)
 
   return (
     <>
-      <Hero />
-      <Container>
-        <FeaturedArticles articles={featured} />
-      </Container>
-      <div style={{ backgroundColor: '#f4f4f4' }} className="py-12 -mb-12">
-        <Container>
-          <MoreArticles posts={posts} />
-        </Container>
-      </div>
+      <HomeHero />
+      <RecognitionStrip />
+      <SpeakingTopics />
+      <FeaturedTalk />
+      <Experience />
+      <SelectedVentures />
+      <BookFeature />
+      <Testimonials />
+      <SelectedWriting posts={writingSample} />
+      <SpeakingInvite />
     </>
   )
 }

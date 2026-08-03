@@ -28,10 +28,7 @@ function TopicChip({
     <button
       type="button"
       onClick={() => onClick(topic)}
-      className={cn(
-        'tag border-none rounded-full px-4 py-2 text-lg font-bold mr-2 mb-2',
-        active && 'is-active'
-      )}
+      className={cn('topic-chip', active && 'is-active')}
     >
       {topicLabel(topic)}
     </button>
@@ -61,10 +58,21 @@ export default function MoreArticles({ posts }: { posts: PostNode[] }) {
   }, [posts, topicFilter])
 
   return (
-    <section style={{ backgroundColor: '#f4f4f4' }} id="resources">
-      <div className="mb-4">
-        <h2 className="section-heading">Resources</h2>
-        <div className="pt-2 pb-6 flex flex-wrap">
+    <section
+      id="resources"
+      className="scroll-mt-24 border-b border-divider bg-[color-mix(in_srgb,var(--color-card)_40%,var(--color-background))] py-12 md:py-16"
+      aria-labelledby="resources-heading"
+    >
+      <div className="site-container">
+        <h2 id="resources-heading" className="sr-only">
+          Filter and browse talks and writing
+        </h2>
+
+        <div
+          className="flex flex-wrap gap-2"
+          role="group"
+          aria-label="Filter by topic"
+        >
           {topics.map((topic) => (
             <TopicChip
               key={topic}
@@ -74,22 +82,25 @@ export default function MoreArticles({ posts }: { posts: PostNode[] }) {
             />
           ))}
         </div>
-      </div>
-      <div className="grid grid-cols-1 gap-y-8 lg:mb-12">
-        {!filtered.length ? (
-          <p className="italic">No resources…</p>
-        ) : (
-          filtered.map((article) => (
-            <PostPreview
-              key={postFilename(article)}
-              title={article.title}
-              date={article.date}
-              excerpt={article.excerpt}
-              href={postHref(article)}
-              external={isExternal(article)}
-            />
-          ))
-        )}
+
+        <ul className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {!filtered.length ? (
+            <li className="text-muted italic">No items for this topic.</li>
+          ) : (
+            filtered.map((article) => (
+              <li key={postFilename(article)}>
+                <PostPreview
+                  title={article.title}
+                  date={article.date}
+                  excerpt={article.excerpt}
+                  href={postHref(article)}
+                  external={isExternal(article)}
+                  format={article.format}
+                />
+              </li>
+            ))
+          )}
+        </ul>
       </div>
     </section>
   )

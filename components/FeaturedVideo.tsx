@@ -8,10 +8,14 @@ export default function FeaturedVideo({ id }: { id: string }) {
       <YouTube
         videoId={id}
         className="featured-video"
+        iframeClassName="featured-video"
         opts={{
           width: '100%',
           height: '100%',
-          playerVars: { rel: 0 },
+          playerVars: {
+            rel: 0,
+            modestbranding: 1,
+          },
         }}
       />
     </div>

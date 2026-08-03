@@ -13,8 +13,8 @@ export default function Container({
   return (
     <div
       className={cn(
-        fullWidthOnMobile ? 'px-0 md:px-5' : 'px-5',
-        'container mx-auto',
+        'site-container',
+        fullWidthOnMobile && 'px-0 md:px-7',
         className
       )}
     >

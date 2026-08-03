@@ -2,7 +2,7 @@
 
 Next.js **App Router** site with **TinaCMS** (GitHub as the content database), set up per the [official Tina App Router guide](https://tina.io/docs/frameworks/next/app-router).
 
-> **Handoff / full project status:** see **[docs/PROJECT_SPEC.md](./docs/PROJECT_SPEC.md)** — what was done, what’s left (TinaCloud, Vercel preview, client sign-off), git branch plan, and restart prompt for a new agent session.
+> **Handoff / full project status:** see **[docs/PROJECT_SPEC.md](./docs/PROJECT_SPEC.md)** — completed Tina + design work, remaining ship path (commit/push, Vercel, TinaCloud, client smoke-test), content gaps, and restart prompt for a new agent session.
 
 ## Stack
 

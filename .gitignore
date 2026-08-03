@@ -41,3 +41,6 @@ next-env.d.ts
 
 # tina local cache
 .tina
+
+# Tina generated local cache
+tina/__generated__/.cache/
