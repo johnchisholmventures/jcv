@@ -1,9 +1,13 @@
 import { defineConfig } from 'tinacms'
 
 // Hosting providers expose branch as an env var (Vercel, Netlify, etc.)
+// Prefer VERCEL_GIT_COMMIT_REF (always set by Vercel at build time).
+// NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF is NOT a default Vercel system var —
+// without this, previews fall back to 'master' and TinaCloud build fails.
 const branch =
   process.env.NEXT_PUBLIC_TINA_BRANCH ||
   process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+  process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
   'master'
 
