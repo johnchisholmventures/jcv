@@ -1,8 +1,8 @@
 # JCV modernization — project spec & handoff
 
 **Purpose:** Restart context for agents/humans continuing this work.  
-**Updated:** 2026-08-02  
-**Branch:** `modernize-tinacms` (local commits exist; design redesign largely **uncommitted**; push when ready for Vercel preview)  
+**Updated:** 2026-08-03  
+**Branch:** `modernize-tinacms` (on GitHub; Vercel preview + TinaCloud **live**)  
 **Repo:** https://github.com/johnchisholmventures/jcv  
 **Working directory:** `~/Documents/code/jcv`  
 **Backup of prior attempt:** `~/Documents/code/jcv-old` (can delete after you’re confident)
@@ -29,7 +29,7 @@ Modernize the John Chisholm Ventures marketing site so:
 | Pain today | Emails docs → developer hand-edits `_posts` + frontmatter + assets + deploy |
 | Domain / live site | Production still on **old** `master` until PR is merged |
 | CMS choice | TinaCMS + GitHub; **TinaCloud Free** ($0, 2 users: you + John) |
-| Publish model (planned) | John saves in `/admin` → commit to GitHub → Vercel rebuild |
+| Publish model | John saves in `/admin` → TinaCloud commits to GitHub → Vercel rebuild |
 | Product records | `PRODUCT.md` (truth), `DESIGN.md` + `.impeccable/design.json` (visual system) |
 
 ### Content types (posts)
@@ -55,15 +55,24 @@ Also: `featured` + `featuredOrder`, `draft` (hidden when true).
 | Next 15 + Tina App Router plumbing | **Done** |
 | Content migration to `content/` | **Done** |
 | Local build / SSG routes | **Done** |
-| Speaker-first redesign (homepage + templates) | **Done** (local; commit/push pending) |
+| Speaker-first redesign (homepage + templates) | **Done** (committed + pushed) |
 | JCV logo masthead + Team (John + Dickey) | **Done** |
 | Books hub (Unleash + Integral) | **Done** |
-| Commit redesign to git + push branch | **TODO** |
-| Vercel preview PR | **TODO** |
-| TinaCloud + Vercel env | **TODO** |
-| Client smoke-test + merge to `master` | **TODO** |
+| Commit redesign + push `modernize-tinacms` | **Done** |
+| GitHub access (`agstover` collaborator on client repo) | **Done** |
+| TinaCloud project on `johnchisholmventures/jcv` | **Done** |
+| Index `modernize-tinacms` on TinaCloud | **Done** |
+| Vercel env: Client ID + Token | **Done** |
+| Vercel **system env vars** enabled (`VERCEL_GIT_COMMIT_REF`, etc.) | **Done** (was the build blocker) |
+| Vercel preview build green on `modernize-tinacms` | **Done** |
+| Open PR into `master` | **TODO** (if not already open) |
+| Share preview URL with John | **TODO** |
+| Invite John as TinaCloud 2nd user | **TODO** |
+| Client smoke-test `/admin` + content flows | **TODO** |
+| Merge to `master` + production cutover | **TODO** (after sign-off) |
 | Real contact form / email + verified testimonials | **TODO** (placeholders) |
 | Rewrite older “we/firm” CMS body copy | **TODO** (optional / editorial) |
+| Rotate Tina token (was briefly in generated client history) | **TODO** (security hygiene) |
 
 ---
 
@@ -102,8 +111,8 @@ Rich text: `TinaMarkdown` via `components/TinaContent.tsx`.
 | Script | Command | When |
 |--------|---------|------|
 | `pnpm dev` | `tinacms dev -c "next dev --turbopack"` | Local dev + GraphQL on `:4001` |
-| `pnpm build` | `tinacms build && NODE_ENV=production next build` | Production **with** TinaCloud |
-| `pnpm build:local` | `tinacms build --local --skip-cloud-checks -c "NODE_ENV=production next build"` | Local/CI without Cloud |
+| `pnpm build` | `bash scripts/vercel-build.sh` | Production **with** TinaCloud (logs branch resolution) |
+| `pnpm build:local` | `tinacms build --local --skip-cloud-checks -c "NODE_ENV=production next build"` | Local without Cloud |
 | `pnpm start` | `NODE_ENV=production next start` | Serve production build |
 
 **Important:** Force `NODE_ENV=production` for `next build` when Tina CLI is in the path, or prerender errors appear.
@@ -163,37 +172,84 @@ Hero → recognition strip → speaking topics → featured talks (modal, no aut
 - `docs/EDITOR_GUIDE.md` — client-facing how to add a post  
 - `docs/PROJECT_SPEC.md` — this handoff  
 - `PRODUCT.md` / `DESIGN.md` — product + design system  
-- `.env.example` — `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`
+- `.env.example` — `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`  
+- `scripts/vercel-build.sh` — CI build that prints Tina branch resolution
 
-### 6. Verified locally
+### 6. Ship path completed (2026-08-03)
 
-- Production-style build succeeds (28+ static routes including `/books`, `/contact`, `/talks`).
-- `pnpm dev` serves site + Tina GraphQL; admin HTML at `public/admin/index.html`.
+#### GitHub
+
+- Canonical repo: **`johnchisholmventures/jcv`** (client-owned). Personal `agstover/jcv` is a stale historical fork — do not treat as source of truth.
+- Developer works as **`agstover`** with **Write collaborator** access on the client repo (do not log in as the client account for day-to-day work).
+- Branch **`modernize-tinacms`** pushed with redesign + Tina setup + `tina/tina-lock.json`.
+- Production **`master`** remains the **old** Next 12 site until merge.
+
+#### TinaCloud ([app.tina.io](https://app.tina.io))
+
+- Project connected to **`johnchisholmventures/jcv`** (existing repo — not “create from template”).
+- **Do not** re-run `tinacms init` on this project; schema already exists on `modernize-tinacms`.
+- `tina/tina-lock.json` must stay committed (required for indexing).
+- **`modernize-tinacms` is indexed** (`status: complete`).
+- **`master` and `dev` stay unindexed** until the redesign is merged (they have no `tina/` schema). That is expected.
+- Free plan: 2 users — invite John when ready for smoke-test.
+
+#### Vercel
+
+- Project deploys from **`johnchisholmventures/jcv`**.
+- Install: `pnpm install` · Build: `pnpm build` → `scripts/vercel-build.sh`.
+- **Manual env vars (only these for Tina):**
+  - `NEXT_PUBLIC_TINA_CLIENT_ID`
+  - `TINA_TOKEN`
+- **System env vars must be enabled** on the Vercel project (Settings → Environment Variables → enable access to system environment variables). Without this, `VERCEL_GIT_COMMIT_REF` is empty and Tina falls back to **`master`** → build fails.
+- Do **not** set `NEXT_PUBLIC_TINA_BRANCH` in normal use; let Vercel set the branch via `VERCEL_GIT_COMMIT_REF`.
+- Preview on **`modernize-tinacms`**: **build is green**. Production/`master` will still fail Tina checks until merge.
+
+#### Branch resolution (how Tina picks a branch)
+
+```ts
+// tina/config.ts — priority order
+process.env.NEXT_PUBLIC_TINA_BRANCH ||
+process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+process.env.VERCEL_GIT_COMMIT_REF ||   // Vercel system (must be enabled)
+process.env.HEAD ||
+'master'                              // fallback only
+```
+
+Build log from `scripts/vercel-build.sh` prints which vars are set and `>>> Using Tina branch: …`. Healthy preview log should show `modernize-tinacms`, not `master`.
+
+#### Local cloud build test (no Vercel)
+
+```bash
+cd ~/Documents/code/jcv
+set -a && source .env && set +a   # CLIENT_ID + TINA_TOKEN
+export VERCEL_GIT_COMMIT_REF=modernize-tinacms
+pnpm run build
+```
+
+### 7. Verified
+
+- Local `pnpm build` with cloud credentials + `modernize-tinacms` succeeds.
+- Local `pnpm build:local` succeeds (29 routes).
+- Vercel preview of `modernize-tinacms` succeeds after system env vars enabled.
 
 ---
 
 ## What we have left to do
 
-### A. Ship path (blocking production / client self-serve on a URL)
+### A. Client review → production (next)
 
-1. **Git**
-   - Commit the redesign (large set of uncommitted files on `modernize-tinacms`).
-   - `git push -u origin modernize-tinacms`.
-2. **PR + Vercel preview**
-   - Open PR into `master`.
-   - Confirm Vercel project → `johnchisholmventures/jcv`.
-   - Install: `pnpm install` · Build: `pnpm build` (or `pnpm install && pnpm build`).
-   - Share preview URL with John for design/content review.
-3. **TinaCloud Free** ([app.tina.io](https://app.tina.io))
-   - Create project, connect this GitHub repo.
-   - Vercel env: `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`.
-   - Invite John as 2nd user; confirm `/admin` on preview/production.
+1. **Confirm / open PR** `modernize-tinacms` → `master` (if not open).
+2. **Share Vercel preview URL** with John for design/content review.
+3. **TinaCloud:** invite John as 2nd collaborator; add preview Site URL(s) in Tina project config if `/admin` login is blocked (include Vercel preview glob + `http://localhost:3000`).
 4. **Smoke-test with John**
-   - Draft post → save → commit + rebuild.
-   - Article / video / external formats.
-   - Topic filters on `/talks`; featured content behavior.
-   - Team bios editable; investments cards editable.
+   - Open `https://<preview>/admin`
+   - Draft post → save → confirm GitHub commit + Vercel rebuild
+   - Article / video / external formats
+   - Topic filters on `/talks`; featured content
+   - Team bios; investments cards
 5. **Merge to `master`** only after sign-off → production cutover.
+6. After merge: Tina will index **`master`**; Production builds should pass; reindex in TinaCloud Configuration if needed.
+7. **Rotate `TINA_TOKEN`** (token briefly appeared in generated `client.ts` history on a public repo). Create new token in TinaCloud → update Vercel + local `.env` → revoke old token.
 
 ### B. Content & conversion gaps (expected client feedback)
 
@@ -225,6 +281,7 @@ Hero → recognition strip → speaking topics → featured talks (modal, no aut
 - Editorial Workflow / paid Tina tiers.
 - Migrating off GitHub as CMS.
 - Invented testimonials, audience numbers, or portfolio solicitation CTAs.
+- Dual-repo workflow (personal fork as live source) — abandoned in favor of one client repo + collaborator.
 
 ---
 
@@ -242,7 +299,8 @@ components/
   home/*                               # homepage sections
   MoreArticles.tsx, PostPreview.tsx, TinaContent.tsx
 content/                               # CMS markdown (source of truth)
-tina/config.ts, tina/__generated__/
+tina/config.ts, tina/tina-lock.json, tina/__generated__/
+scripts/vercel-build.sh                # Vercel build + branch logging
 public/
   assets/jcv-logo.png, john-banner.jpg, investments/, blog/
   uyic_cover.jpg, integral_cover.png
@@ -258,6 +316,7 @@ docs/PROJECT_SPEC.md, docs/EDITOR_GUIDE.md
 cd ~/Documents/code/jcv
 # or: git clone … && git checkout modernize-tinacms
 pnpm install
+# .env: NEXT_PUBLIC_TINA_CLIENT_ID + TINA_TOKEN (gitignored)
 pnpm dev
 # http://localhost:3000
 # http://localhost:3000/admin
@@ -270,6 +329,14 @@ Production-like build without Cloud:
 pnpm run build:local
 ```
 
+Cloud build (matches Vercel Tina checks):
+
+```bash
+set -a && source .env && set +a
+export VERCEL_GIT_COMMIT_REF=modernize-tinacms
+pnpm run build
+```
+
 **Note:** Running `next dev` alone (without `tinacms dev`) will 500 on Tina-backed pages — GraphQL won’t be on `:4001`.
 
 ---
@@ -278,19 +345,30 @@ pnpm run build:local
 
 | Item | State |
 |------|--------|
-| `origin` | `https://github.com/johnchisholmventures/jcv.git` |
-| `master` / `origin/master` | Still **old** production site (Next 12 era) |
-| `modernize-tinacms` | Tina rewrite committed earlier; **redesign largely uncommitted** as of this update |
-| Remote preview | After push + Vercel: branch/PR preview URL for John |
+| `origin` | `johnchisholmventures/jcv` |
+| `master` / `origin/master` | Still **old** production site (Next 12 era); **not** Tina-indexed |
+| `modernize-tinacms` | New site + redesign + Tina; **indexed on TinaCloud**; Vercel preview **green** |
+| `dev` | Old side branch; unindexed — ignore for Tina |
 | Production | Unchanged until merge to `master` |
 
-### Preview-before-master workflow
+### Ownership model (keep it simple)
 
-1. Commit redesign → push `modernize-tinacms`  
-2. Open PR → Vercel preview URL  
-3. Share URL with John  
-4. Wire TinaCloud so he can try `/admin` on preview if desired  
-5. Merge when approved  
+| Role | Who | Tool |
+|------|-----|------|
+| Repo owner | Client account `johnchisholmventures` | GitHub |
+| Developer | `agstover` (collaborator) | Git + Vercel |
+| Hosting | Vercel → client repo | Vercel |
+| CMS backend | TinaCloud → same client repo | app.tina.io |
+| Editors | You + John (2 free seats) | `/admin` |
+
+### Preview → production workflow
+
+1. ~~Commit redesign → push `modernize-tinacms`~~ **Done**  
+2. ~~TinaCloud + Vercel env + system env vars~~ **Done**  
+3. ~~Vercel preview green~~ **Done**  
+4. Share preview URL with John  
+5. Invite John to Tina; smoke-test `/admin`  
+6. Merge PR when approved → reindex `master` if needed → production  
 
 ---
 
@@ -329,12 +407,26 @@ Do **not**: present site as an active VC fund, invite pitch decks, invent testim
 | Books | Hub + external Integral | Two books; Integral has own site |
 | Contact v1 | Placeholder | No confirmed form/email yet |
 | Testimonials v1 | Marked placeholders | Do not invent praise |
+| Git ownership | One client repo + collaborator | Avoid dual personal/client fork chaos |
+| Tina init checklist | Skip re-init | Schema already on `modernize-tinacms` |
+| Branch for Tina builds | Vercel system `VERCEL_GIT_COMMIT_REF` | Must enable system env vars on Vercel |
+
+---
+
+## Lessons / gotchas (Tina + Vercel)
+
+1. **Only two Tina secrets:** `NEXT_PUBLIC_TINA_CLIENT_ID` + `TINA_TOKEN`. Branch is not a manual env var in normal use.
+2. **Enable Vercel system environment variables** or every Tina build targets fallback `master` and fails.
+3. **Default branch `master` has no Tina schema** until merge; unindexed `master`/`dev` in TinaCloud UI is expected.
+4. **`tina/tina-lock.json` must be on the branch** you index; generate via `tinacms dev` (not only `tinacms build`).
+5. **Do not run `npx @tinacms/cli init`** on this already-initialized project.
+6. **Never commit live tokens** in `tina/__generated__/client.ts` (public repo). Rotate if leaked.
 
 ---
 
 ## Suggested next agent prompt
 
-> Continue JCV on branch `modernize-tinacms` in `~/Documents/code/jcv`. Read `docs/PROJECT_SPEC.md`. Commit all redesign work if still uncommitted, push the branch, open a PR for Vercel preview, and set up TinaCloud Free + Vercel env vars (`NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`) so we can share a preview URL with John. Then smoke-test `/admin` and content flows before any merge to `master`.
+> Continue JCV on branch `modernize-tinacms` in `~/Documents/code/jcv`. Read `docs/PROJECT_SPEC.md`. Preview is live on Vercel with TinaCloud. Open/share the PR and preview URL with John, invite him as the 2nd TinaCloud user, smoke-test `/admin` (create draft post, save, rebuild), then merge to `master` only after sign-off. After merge, confirm Production deploy + Tina index on `master`. Rotate `TINA_TOKEN` if not already done.
 
 ---
 
@@ -342,6 +434,8 @@ Do **not**: present site as an active VC fund, invite pitch decks, invent testim
 
 - https://tina.io/docs/frameworks/next/app-router  
 - https://tina.io/docs/tinacloud/overview  
+- https://tina.io/docs/tinacloud/troubleshooting  
+- https://vercel.com/docs/environment-variables/system-environment-variables  
 - https://tina.io/pricing (Free = 2 users)  
 - https://github.com/johnchisholmventures/jcv  
-- Design brief: speaker-first homepage (this session) + `PRODUCT.md` / `DESIGN.md`  
+- Design: `PRODUCT.md` / `DESIGN.md`  
