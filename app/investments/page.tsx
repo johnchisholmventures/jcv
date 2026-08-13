@@ -2,6 +2,7 @@ import BackLink from '@/components/BackLink'
 import PageHeader from '@/components/PageHeader'
 import PageShell from '@/components/PageShell'
 import TinaContent from '@/components/TinaContent'
+import { normalizeMediaPath } from '@/lib/media'
 import { client } from '@/tina/__generated__/client'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -84,8 +85,7 @@ function VentureCard({
 
 function getLogoPath(picture?: string | null, name?: string | null) {
   if (picture) {
-    if (picture.startsWith('/')) return picture
-    return `/${picture}`
+    return normalizeMediaPath(picture)
   }
 
   const normalizedName = (name || '').toLowerCase()

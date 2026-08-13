@@ -2,6 +2,7 @@ import BackLink from '@/components/BackLink'
 import PageHeader from '@/components/PageHeader'
 import PageShell from '@/components/PageShell'
 import TinaContent from '@/components/TinaContent'
+import { normalizeMediaPath } from '@/lib/media'
 import { client } from '@/tina/__generated__/client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -40,6 +41,7 @@ export default async function TeamPage() {
       {/* Roster cards — makes both people visible at a glance */}
       <ul className="mt-10 grid gap-5 sm:grid-cols-2">
         {persons.map((person) => {
+          const picture = normalizeMediaPath(person.picture)
           const role =
             (person.name && ROLE_BY_NAME[person.name]) ||
             'John Chisholm Ventures'
@@ -53,11 +55,11 @@ export default async function TeamPage() {
                 href={anchor ? `#${anchor}` : undefined}
                 className="card-surface flex h-full items-center gap-5 p-5 no-underline transition-shadow hover:shadow-[var(--shadow-elevated)] md:p-6"
               >
-                {person.picture ? (
+                {picture ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     className="h-20 w-20 shrink-0 rounded-[var(--radius-card)] border border-divider object-cover object-top sm:h-24 sm:w-24"
-                    src={person.picture}
+                    src={picture}
                     alt=""
                     width={96}
                     height={96}
@@ -80,6 +82,7 @@ export default async function TeamPage() {
 
       <div className="mt-16 space-y-14 md:mt-20 md:space-y-16">
         {persons.map((person, index) => {
+          const picture = normalizeMediaPath(person.picture)
           const anchor = person.name
             ? person.name.toLowerCase().replace(/\s+/g, '-')
             : undefined
@@ -98,11 +101,11 @@ export default async function TeamPage() {
             >
               <div className="grid items-start gap-8 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] lg:gap-12">
                 <div className="text-center md:text-left">
-                  {person.picture ? (
+                  {picture ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       className="mx-auto aspect-square w-full max-w-[15rem] rounded-[var(--radius-card)] border border-divider object-cover object-top shadow-[var(--shadow-card)] md:mx-0"
-                      src={person.picture}
+                      src={picture}
                       alt={person.name || ''}
                       width={280}
                       height={280}

@@ -1,3 +1,5 @@
+import { normalizeMediaPath } from '@/lib/media'
+
 type PeoplePlace = {
   title?: string | null
   image?: string | null
@@ -36,7 +38,7 @@ export default function PeoplePlaces({ items }: { items: PeoplePlace[] }) {
                 {item.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={normalizeImagePath(item.image)}
+                    src={normalizeMediaPath(item.image)}
                     alt={item.alt || ''}
                     className="aspect-[4/3] w-full object-cover object-center"
                     width={520}
@@ -65,9 +67,4 @@ export default function PeoplePlaces({ items }: { items: PeoplePlace[] }) {
       </div>
     </section>
   )
-}
-
-function normalizeImagePath(path: string) {
-  if (path.startsWith('/')) return path
-  return `/${path}`
 }
