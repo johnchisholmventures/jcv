@@ -3,11 +3,21 @@ export function normalizeMediaPath(path: string | null | undefined) {
 
   const trimmed = path.trim()
   if (!trimmed) return undefined
+
+  const tinaFilePath = trimmed.match(/\/__file\/(.+)$/)?.[1]
+  if (tinaFilePath) {
+    return publicPath(tinaFilePath)
+  }
+
   if (/^(https?:)?\/\//.test(trimmed) || trimmed.startsWith('data:')) {
     return trimmed
   }
 
-  const withoutLeadingSlash = trimmed.replace(/^\/+/, '')
+  return publicPath(trimmed)
+}
+
+function publicPath(path: string) {
+  const withoutLeadingSlash = path.replace(/^\/+/, '')
   const withoutPublic = withoutLeadingSlash.startsWith('public/')
     ? withoutLeadingSlash.slice('public/'.length)
     : withoutLeadingSlash
