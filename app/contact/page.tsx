@@ -2,12 +2,11 @@ import BackLink from '@/components/BackLink'
 import PageHeader from '@/components/PageHeader'
 import PageShell from '@/components/PageShell'
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Invite John to Speak',
+  title: 'Contact John',
   description:
-    'Invite John Chisholm to speak at your conference, university, or organization. Include event date, location, audience, format, and preferred topic.',
+    'Contact John Chisholm about speaking, writing, workshops, entrepreneurship education, and selected advisory conversations.',
   alternates: {
     canonical: '/contact',
   },
@@ -18,9 +17,9 @@ export default function ContactPage() {
     <PageShell>
       <BackLink />
       <PageHeader
-        eyebrow="Speaking inquiry"
-        title="Invite John to Speak"
-        description="John is available for selected keynotes, fireside conversations, panels, university programs, and workshops on entrepreneurship, innovation, AI, regulation, and personal development."
+        eyebrow="Contact"
+        title="What can John do for you?"
+        description="John frequently speaks at universities and conferences and writes on entrepreneurship, regulation, innovation, higher education, and economic growth. Use this page to start a conversation about work where his experience may be useful."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -30,8 +29,8 @@ export default function ContactPage() {
           </h2>
           <p className="mt-4 text-muted">
             A dedicated inquiry form will be connected here. Until then, use
-            LinkedIn or X to send a speaking invitation, and include the
-            details listed beside this card so the team can respond quickly.
+            LinkedIn or X to contact John, and include enough context for a
+            useful response.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
@@ -59,24 +58,45 @@ export default function ContactPage() {
 
         <div className="card-surface p-6 md:p-8">
           <h2 className="font-display text-xl text-foreground">
-            Please include
+            What John can help with
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-muted">
-            <li>Event date and location</li>
-            <li>Audience size and composition</li>
-            <li>Format (keynote, panel, workshop, fireside chat)</li>
-            <li>Preferred topic or theme</li>
-            <li>Organizer contact information</li>
+            <li>University and conference talks</li>
+            <li>Entrepreneurship workshops and classroom programs</li>
+            <li>Writing, essays, and commentary</li>
+            <li>Discussions on regulation, innovation, and economic growth</li>
+            <li>Selected board, advisory, and mentoring conversations</li>
           </ul>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8">
             <a href="/cv" className="btn btn-secondary">
-              Download Speaker Information
+              Download CV
             </a>
-            <Link href="/#speaking-topics" className="btn btn-secondary">
-              View speaking topics
-            </Link>
           </div>
         </div>
+      </div>
+
+      <div className="mt-6 card-surface p-6 md:p-8">
+        <h2 className="font-display text-xl text-foreground">
+          What to include when you reach out
+        </h2>
+        <p className="mt-4 max-w-2xl text-muted">
+          A few details make it easier for John or his team to understand the
+          opportunity and respond with the right next step.
+        </p>
+        <ul className="mt-5 grid gap-3 text-muted sm:grid-cols-2">
+          <li className="border-t border-divider pt-3">
+            Event or project date, if there is one
+          </li>
+          <li className="border-t border-divider pt-3">
+            Location, audience, and format
+          </li>
+          <li className="border-t border-divider pt-3">
+            Topic, theme, or question you want to explore
+          </li>
+          <li className="border-t border-divider pt-3">
+            Best organizer contact information
+          </li>
+        </ul>
       </div>
     </PageShell>
   )

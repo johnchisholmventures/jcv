@@ -41,12 +41,13 @@ export default function SpeakingTopics() {
       <div className="site-container">
         <div className="max-w-2xl">
           <h2 id="topics-heading" className="section-heading text-3xl md:text-4xl lg:text-[2.65rem]">
-            Ideas for audiences navigating change
+            Let’s explore together
           </h2>
           <p className="lede mt-5">
             Drawing on experience as a founder, CEO, investor, and educator,
             John combines firsthand stories with practical frameworks for
-            understanding entrepreneurship and technological change.
+            understanding entrepreneurship, regulation, innovation, higher
+            education, and economic growth.
           </p>
         </div>
 
@@ -64,13 +65,6 @@ export default function SpeakingTopics() {
                 <p className="mt-5 border-t border-divider pt-4 text-sm text-muted">
                   {topic.audience}
                 </p>
-                <Link
-                  href="/contact"
-                  className="text-link mt-2 text-sm"
-                >
-                  Explore topic
-                  <ArrowIcon />
-                </Link>
               </article>
             </li>
           ))}
@@ -78,7 +72,7 @@ export default function SpeakingTopics() {
 
         <div className="mt-10">
           <Link href="/contact" className="text-link">
-            View all speaking topics
+            Start a conversation
             <ArrowIcon />
           </Link>
         </div>

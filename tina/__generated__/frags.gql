@@ -38,6 +38,16 @@ fragment InvestmentParts on Investment {
   order
 }
 
+fragment PeoplePlaceParts on PeoplePlace {
+  __typename
+  title
+  image
+  alt
+  location
+  caption
+  order
+}
+
 fragment PageParts on Page {
   __typename
   title

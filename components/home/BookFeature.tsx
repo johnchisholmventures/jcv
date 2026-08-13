@@ -40,7 +40,8 @@ export default function BookFeature() {
                 <p className="mt-3 text-sm leading-relaxed text-muted md:text-[0.98rem]">
                   A practical process for discovering business opportunities at
                   the intersection of unmet needs and your abilities, interests,
-                  relationships, and values.
+                  relationships, and values. Now available in English, Chinese,
+                  Spanish, Portuguese, and Polish.
                 </p>
                 <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                   <Link href="/uyic" className="btn btn-primary !min-h-11 text-sm">
@@ -88,12 +89,6 @@ export default function BookFeature() {
                   >
                     Visit Integral
                   </a>
-                  <Link
-                    href="/books#integral"
-                    className="btn btn-secondary !min-h-11 text-sm"
-                  >
-                    On this site
-                  </Link>
                 </div>
               </div>
             </div>
@@ -102,7 +97,7 @@ export default function BookFeature() {
 
         <div className="mt-8">
           <Link href="/books" className="text-link text-sm">
-            View both books
+            More about these books
             <svg
               width="16"
               height="16"

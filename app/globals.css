@@ -300,6 +300,7 @@
 
   .markdown img {
     display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
     margin-block: 1.75rem;

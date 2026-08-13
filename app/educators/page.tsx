@@ -49,7 +49,7 @@ export default async function EducatorsPage() {
           Explore the book
         </Link>
         <Link href="/contact" className="btn btn-secondary">
-          Invite John to Speak
+          Contact John
         </Link>
       </div>
     </PageShell>

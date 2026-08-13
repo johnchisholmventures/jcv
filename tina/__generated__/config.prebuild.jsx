@@ -213,6 +213,45 @@ var config_default = defineConfig({
         ]
       },
       {
+        name: "peoplePlace",
+        label: "People & Places",
+        path: "content/people-places",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Image",
+            required: true
+          },
+          {
+            type: "string",
+            name: "alt",
+            label: "Alt text",
+            description: "Describe the image for screen readers. Leave empty only if decorative."
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Location / context"
+          },
+          {
+            type: "string",
+            name: "caption",
+            label: "Caption",
+            ui: { component: "textarea" }
+          },
+          { type: "number", name: "order", label: "Display order" }
+        ]
+      },
+      {
         name: "page",
         label: "Site pages",
         path: "content/pages",

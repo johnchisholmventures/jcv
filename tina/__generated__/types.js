@@ -48,6 +48,17 @@ export const InvestmentPartsFragmentDoc = gql`
   order
 }
     `;
+export const PeoplePlacePartsFragmentDoc = gql`
+    fragment PeoplePlaceParts on PeoplePlace {
+  __typename
+  title
+  image
+  alt
+  location
+  caption
+  order
+}
+    `;
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
   __typename
@@ -226,6 +237,63 @@ export const InvestmentConnectionDocument = gql`
   }
 }
     ${InvestmentPartsFragmentDoc}`;
+export const PeoplePlaceDocument = gql`
+    query peoplePlace($relativePath: String!) {
+  peoplePlace(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PeoplePlaceParts
+  }
+}
+    ${PeoplePlacePartsFragmentDoc}`;
+export const PeoplePlaceConnectionDocument = gql`
+    query peoplePlaceConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PeoplePlaceFilter) {
+  peoplePlaceConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PeoplePlaceParts
+      }
+    }
+  }
+}
+    ${PeoplePlacePartsFragmentDoc}`;
 export const PageDocument = gql`
     query page($relativePath: String!) {
   page(relativePath: $relativePath) {
@@ -302,6 +370,12 @@ export function getSdk(requester) {
     },
     investmentConnection(variables, options) {
       return requester(InvestmentConnectionDocument, variables, options);
+    },
+    peoplePlace(variables, options) {
+      return requester(PeoplePlaceDocument, variables, options);
+    },
+    peoplePlaceConnection(variables, options) {
+      return requester(PeoplePlaceConnectionDocument, variables, options);
     },
     page(variables, options) {
       return requester(PageDocument, variables, options);

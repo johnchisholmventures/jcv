@@ -70,7 +70,7 @@ Also: `featured` + `featuredOrder`, `draft` (hidden when true).
 | Invite John as TinaCloud 2nd user | **TODO** |
 | Client smoke-test `/admin` + content flows | **TODO** |
 | Merge to `master` + production cutover | **TODO** (after sign-off) |
-| Real contact form / email + verified testimonials | **TODO** (placeholders) |
+| Real contact form / email | **TODO** (placeholder) |
 | Rewrite older “we/firm” CMS body copy | **TODO** (optional / editorial) |
 | Rotate Tina token (was briefly in generated client history) | **TODO** (security hygiene) |
 
@@ -135,7 +135,7 @@ Speaker-first redesign from a detailed design brief + impeccable skill (`PRODUCT
 
 **Homepage** (`components/home/*`)
 
-Hero → recognition strip → speaking topics → featured talks (modal, no autoplay) → experience → ventures → **books (Unleash + Integral)** → testimonial **placeholders** → selected writing → invite band.
+Hero → recognition strip → speaking topics → featured talks (modal, no autoplay) → experience → ventures → **books (Unleash + Integral)** → Tina-backed People & Places photo grid → selected writing → invite band.
 
 **Routes (current)**
 
@@ -164,7 +164,7 @@ Hero → recognition strip → speaking topics → featured talks (modal, no aut
 - JCV masthead restored (not personal-name-only wordmark)
 - Team page restored in nav with Dickey visible
 - Investments labeled as career/venture history, not “submit a pitch”
-- Testimonials are marked placeholders only
+- People & Places replaces placeholder testimonials with real photo evidence
 
 ### 5. Docs in tree
 
@@ -256,7 +256,7 @@ pnpm run build
 | Item | Notes |
 |------|--------|
 | **Contact / speaking inquiry** | `/contact` is a placeholder (LinkedIn/X). Wire real email or form when John provides it. |
-| **Testimonials** | Placeholder quotes only. Replace with verified organizer quotes or swap section for past engagements. |
+| **People & Places** | Tina-backed photo grid for talks, workshops, and public conversations. Add real captions only; do not imply institutional endorsement. |
 | **Speaker one-pager** | “Download speaker information” → `/cv` (old CV PDF). Replace if a current one-pager exists. |
 | **Hero / experience photography** | `john-banner.jpg` is a networking room shot; better stage-speaking photo would strengthen hero. |
 | **CMS body copy voice** | Templates are speaker-first; some Tina markdown (mission, investments) still uses older “we / firm / invest” language. Editorial rewrite optional. |
@@ -302,7 +302,7 @@ content/                               # CMS markdown (source of truth)
 tina/config.ts, tina/tina-lock.json, tina/__generated__/
 scripts/vercel-build.sh                # Vercel build + branch logging
 public/
-  assets/jcv-logo.png, john-banner.jpg, investments/, blog/
+  assets/jcv-logo.png, john-banner.jpg, john/, investments/, blog/
   uyic_cover.jpg, integral_cover.png
   pdfs/, uploads/, admin/
 docs/PROJECT_SPEC.md, docs/EDITOR_GUIDE.md
@@ -381,9 +381,9 @@ pnpm run build
 | Primary accent | Violet `#5835A5` / dark `#382263` |
 | Gold (sparing) | `#B08A45` |
 | Masthead | `/assets/jcv-logo.png` (John Chisholm Ventures) |
-| Hero photo | `/assets/john-banner.jpg` (upgrade if better speaking photo available) |
+| Hero photo | `/assets/john/john-chisholm-current-portrait-preferred.jpg` |
 | Book covers | `/uyic_cover.jpg`, `/integral_cover.png` |
-| Primary conversion | Invite John to Speak → `/contact` |
+| Primary conversion | Contact John / What can John do for you? → `/contact` |
 | Secondary conversion | Watch talks → homepage `#talks` / `/talks` |
 
 Do **not**: present site as an active VC fund, invite pitch decks, invent testimonials/metrics, or drop Team/Dickey from nav without client request.
@@ -406,7 +406,7 @@ Do **not**: present site as an active VC fund, invite pitch decks, invent testim
 | Investments framing | Venture history | Experience evidence, not solicitation |
 | Books | Hub + external Integral | Two books; Integral has own site |
 | Contact v1 | Placeholder | No confirmed form/email yet |
-| Testimonials v1 | Marked placeholders | Do not invent praise |
+| People & Places v1 | Tina-backed photo grid | Social proof without invented praise |
 | Git ownership | One client repo + collaborator | Avoid dual personal/client fork chaos |
 | Tina init checklist | Skip re-init | Schema already on `modernize-tinacms` |
 | Branch for Tina builds | Vercel system `VERCEL_GIT_COMMIT_REF` | Must enable system env vars on Vercel |

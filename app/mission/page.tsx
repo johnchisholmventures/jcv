@@ -32,7 +32,7 @@ export default async function MissionPage() {
           Meet the team
         </Link>
         <Link href="/contact" className="btn btn-secondary">
-          Invite John to Speak
+          Contact John
         </Link>
       </div>
     </PageShell>

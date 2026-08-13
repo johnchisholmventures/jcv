@@ -152,13 +152,13 @@ export default async function TeamPage() {
 
       <div className="mt-14 flex flex-col gap-3 border-t border-divider pt-10 sm:flex-row sm:flex-wrap">
         <Link href="/contact" className="btn btn-primary">
-          Invite John to Speak
+          Contact John
         </Link>
         <Link href="/investments" className="btn btn-secondary">
           Explore venture history
         </Link>
         <a href="/cv" className="btn btn-secondary">
-          Download speaker information
+          Download CV
         </a>
       </div>
     </PageShell>

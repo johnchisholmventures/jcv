@@ -1,7 +1,7 @@
 ---
 title: Mission
 ---
-*** To encourage, mentor and empower entrepreneurs who are passionate about making the world a better place; and to help create market environments conducive to entrepreneurship worldwide. ***
+To encourage, mentor and empower entrepreneurs who are passionate about making the world a better place; and to help create market environments conducive to entrepreneurship worldwide.
 
 We are technology entrepreneurs who have experienced first-hand the challenge, personal growth, and liberation of entrepreneurship; and witnessed the economic growth and advances in quality of life that entrepreneurship drives worldwide.  We serve other entrepreneurs through consulting, angel investing, and [mentoring](http://www.youtube.com/watch?v=cOZ6Gpbm-lQ).
 

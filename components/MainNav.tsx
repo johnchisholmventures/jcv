@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import cn from 'classnames'
 
 const NAV = [
-  { href: '/#speaking-topics', label: 'Speaking' },
+  { href: '/#speaking-topics', label: 'Topics' },
   { href: '/mission', label: 'About', match: 'mission' },
   { href: '/team', label: 'Team', match: 'team' },
   { href: '/talks', label: 'Talks & Writing', match: 'talks' },
@@ -84,9 +84,9 @@ export default function MainNav() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="btn btn-primary hidden px-3 text-sm sm:inline-flex sm:px-4 sm:text-[0.9375rem]"
+              className="btn btn-secondary hidden px-3 text-sm sm:inline-flex sm:px-4 sm:text-[0.9375rem]"
             >
-              Invite John to Speak
+              Contact
             </Link>
 
             <button
@@ -149,9 +149,9 @@ export default function MainNav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="btn btn-primary mt-2 w-full"
+              className="btn btn-secondary mt-2 w-full"
             >
-              Invite John to Speak
+              Contact
             </Link>
           </nav>
         </div>

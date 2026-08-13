@@ -1,59 +1,210 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-02T00:00:00.000Z",
+  "generatedAt": "2026-08-13T21:13:22Z",
   "title": "Design System: John Chisholm",
   "extensions": {
     "colorMeta": {
-      "violet": {
-        "role": "primary",
-        "displayName": "Deep Violet",
-        "canonical": "#5835A5"
-      },
       "background": {
         "role": "neutral",
         "displayName": "Warm Paper",
-        "canonical": "#F6F3ED"
+        "canonical": "#F6F3ED",
+        "tonalRamp": [
+          "oklch(15% 0.02 85)",
+          "oklch(27% 0.02 85)",
+          "oklch(39% 0.02 85)",
+          "oklch(51% 0.02 85)",
+          "oklch(63% 0.02 85)",
+          "oklch(75% 0.02 85)",
+          "oklch(87% 0.02 85)",
+          "oklch(95% 0.02 85)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Near Black",
+        "canonical": "#191817",
+        "tonalRamp": [
+          "oklch(12% 0.01 80)",
+          "oklch(20% 0.01 80)",
+          "oklch(32% 0.01 80)",
+          "oklch(44% 0.01 80)",
+          "oklch(56% 0.01 80)",
+          "oklch(68% 0.01 80)",
+          "oklch(82% 0.01 80)",
+          "oklch(94% 0.01 80)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Stone",
+        "canonical": "#625F59",
+        "tonalRamp": [
+          "oklch(18% 0.01 80)",
+          "oklch(29% 0.01 80)",
+          "oklch(41% 0.01 80)",
+          "oklch(53% 0.01 80)",
+          "oklch(65% 0.01 80)",
+          "oklch(76% 0.01 80)",
+          "oklch(87% 0.01 80)",
+          "oklch(95% 0.01 80)"
+        ]
+      },
+      "violet": {
+        "role": "primary",
+        "displayName": "Deep Violet",
+        "canonical": "#5835A5",
+        "tonalRamp": [
+          "oklch(15% 0.12 300)",
+          "oklch(27% 0.14 300)",
+          "oklch(39% 0.16 300)",
+          "oklch(51% 0.18 300)",
+          "oklch(63% 0.16 300)",
+          "oklch(75% 0.12 300)",
+          "oklch(87% 0.08 300)",
+          "oklch(95% 0.04 300)"
+        ]
+      },
+      "violet-dark": {
+        "role": "primary",
+        "displayName": "Dark Violet",
+        "canonical": "#382263",
+        "tonalRamp": [
+          "oklch(13% 0.1 300)",
+          "oklch(24% 0.12 300)",
+          "oklch(35% 0.14 300)",
+          "oklch(47% 0.16 300)",
+          "oklch(59% 0.14 300)",
+          "oklch(72% 0.1 300)",
+          "oklch(86% 0.06 300)",
+          "oklch(95% 0.03 300)"
+        ]
+      },
+      "violet-hover": {
+        "role": "primary",
+        "displayName": "Violet Hover",
+        "canonical": "#4A2C8C",
+        "tonalRamp": [
+          "oklch(14% 0.11 300)",
+          "oklch(25% 0.13 300)",
+          "oklch(37% 0.15 300)",
+          "oklch(49% 0.17 300)",
+          "oklch(61% 0.15 300)",
+          "oklch(74% 0.11 300)",
+          "oklch(87% 0.07 300)",
+          "oklch(95% 0.03 300)"
+        ]
       },
       "gold": {
         "role": "secondary",
         "displayName": "Warm Gold",
-        "canonical": "#B08A45"
+        "canonical": "#B08A45",
+        "tonalRamp": [
+          "oklch(15% 0.06 75)",
+          "oklch(27% 0.07 75)",
+          "oklch(39% 0.08 75)",
+          "oklch(51% 0.09 75)",
+          "oklch(63% 0.08 75)",
+          "oklch(75% 0.06 75)",
+          "oklch(87% 0.04 75)",
+          "oklch(95% 0.02 75)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(27% 0 0)",
+          "oklch(39% 0 0)",
+          "oklch(51% 0 0)",
+          "oklch(63% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(87% 0 0)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Warm Divider",
+        "canonical": "#DCD7CD",
+        "tonalRamp": [
+          "oklch(15% 0.01 85)",
+          "oklch(27% 0.01 85)",
+          "oklch(39% 0.01 85)",
+          "oklch(51% 0.01 85)",
+          "oklch(63% 0.01 85)",
+          "oklch(75% 0.01 85)",
+          "oklch(87% 0.01 85)",
+          "oklch(95% 0.01 85)"
+        ]
+      },
+      "on-violet": {
+        "role": "neutral",
+        "displayName": "On Violet",
+        "canonical": "#F6F3ED",
+        "tonalRamp": [
+          "oklch(15% 0.02 85)",
+          "oklch(27% 0.02 85)",
+          "oklch(39% 0.02 85)",
+          "oklch(51% 0.02 85)",
+          "oklch(63% 0.02 85)",
+          "oklch(75% 0.02 85)",
+          "oklch(87% 0.02 85)",
+          "oklch(95% 0.02 85)"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display Serif",
-        "purpose": "Hero and section headlines."
+        "purpose": "Hero and major section titles."
       },
       "body": {
         "displayName": "Body Sans",
-        "purpose": "UI, body copy, navigation."
+        "purpose": "UI, body copy, navigation, and long-form reading."
+      },
+      "label": {
+        "displayName": "Eyebrow Label",
+        "purpose": "Section labels, category labels, and compact metadata."
       }
     },
     "shadows": [
       {
         "name": "card",
         "value": "0 1px 2px rgb(25 24 23 / 0.04), 0 8px 24px rgb(25 24 23 / 0.06)",
-        "purpose": "Default elevated cards."
+        "purpose": "Default elevated surfaces."
       },
       {
         "name": "elevated",
         "value": "0 4px 12px rgb(25 24 23 / 0.08), 0 16px 40px rgb(25 24 23 / 0.1)",
-        "purpose": "Hero media, book cover, featured surfaces."
+        "purpose": "Hero photo, book cover, and featured media."
       }
     ],
     "motion": [
       {
         "name": "ease-control",
         "value": "160ms ease",
-        "purpose": "Button and link state transitions; respect reduced-motion."
+        "purpose": "Button, link, border, and card state transitions; respect reduced-motion."
       }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "xl", "value": "1280px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
     ]
   },
   "components": [
@@ -61,66 +212,110 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Solid violet CTA for Invite and primary conversions.",
-      "html": "<button class=\"ds-btn-primary\">Invite John to Speak</button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0.7rem 1.35rem; border-radius: 0.5rem; border: none; background: #5835A5; color: #fff; font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; cursor: pointer; transition: background-color 160ms ease; } .ds-btn-primary:hover { background: #4A2C8C; } .ds-btn-primary:focus-visible { outline: 2px solid #5835A5; outline-offset: 3px; }"
+      "description": "Solid violet CTA for contact and primary conversions.",
+      "html": "<button class=\"ds-btn-primary\">What can John do for you?</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.7rem 1.35rem; border-radius: var(--radius-control, 0.5rem); border: 1px solid transparent; background: var(--color-violet, #5835A5); color: #fff; font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; text-decoration: none; cursor: pointer; transition: background-color 160ms ease, transform 160ms ease; } .ds-btn-primary:hover { background: var(--color-violet-hover, #4A2C8C); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-violet, #5835A5); outline-offset: 3px; }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Outlined control on paper surfaces.",
-      "html": "<button class=\"ds-btn-secondary\">Explore the Book</button>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0.7rem 1.35rem; border-radius: 0.5rem; border: 1px solid #DCD7CD; background: transparent; color: #191817; font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; cursor: pointer; } .ds-btn-secondary:hover { border-color: #9c978d; } .ds-btn-secondary:focus-visible { outline: 2px solid #5835A5; outline-offset: 3px; }"
+      "description": "Outlined control on paper surfaces for lower-pressure actions.",
+      "html": "<button class=\"ds-btn-secondary\">More about these books</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.7rem 1.35rem; border-radius: var(--radius-control, 0.5rem); border: 1px solid var(--color-divider, #DCD7CD); background: transparent; color: var(--color-foreground, #191817); font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; text-decoration: none; cursor: pointer; transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease; } .ds-btn-secondary:hover { border-color: color-mix(in srgb, var(--color-foreground, #191817) 28%, var(--color-divider, #DCD7CD)); background: color-mix(in srgb, white 70%, var(--color-background, #F6F3ED)); } .ds-btn-secondary:active { transform: translateY(1px); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-violet, #5835A5); outline-offset: 3px; }"
+    },
+    {
+      "name": "On Dark Button",
+      "kind": "button",
+      "refersTo": "button-on-dark",
+      "description": "White action button for violet or dark featured media sections.",
+      "html": "<button class=\"ds-btn-on-dark\">Watch the Talk</button>",
+      "css": ".ds-btn-on-dark { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.7rem 1.35rem; border-radius: var(--radius-control, 0.5rem); border: 1px solid transparent; background: #fff; color: var(--color-violet-dark, #382263); font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; cursor: pointer; transition: background-color 160ms ease, transform 160ms ease; } .ds-btn-on-dark:hover { background: var(--color-background, #F6F3ED); } .ds-btn-on-dark:active { transform: translateY(1px); } .ds-btn-on-dark:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Compact inline action with violet text and small directional icon.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Start a conversation<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a>",
+      "css": ".ds-text-link { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.75rem; color: var(--color-violet, #5835A5); font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; text-decoration: none; transition: color 160ms ease; } .ds-text-link:hover { color: var(--color-violet-dark, #382263); } .ds-text-link:focus-visible { outline: 2px solid var(--color-violet, #5835A5); outline-offset: 3px; } .ds-text-link svg { flex: none; }"
     },
     {
       "name": "Topic Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "Speaking topic surface with category, title, body, audience.",
-      "html": "<article class=\"ds-card\"><p class=\"ds-eyebrow\">Entrepreneurship</p><h3 class=\"ds-card-title\">Discover and Build Your Ideal Business</h3><p class=\"ds-card-body\">How entrepreneurs identify unmet needs that align with their abilities and values.</p></article>",
-      "css": ".ds-card { background: #fff; border: 1px solid #DCD7CD; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 1px 2px rgb(25 24 23 / 0.04), 0 8px 24px rgb(25 24 23 / 0.06); } .ds-eyebrow { margin: 0; font: 600 0.75rem/1.2 \"Source Sans 3\", system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #5835A5; } .ds-card-title { margin: 0.75rem 0 0; font: 600 1.25rem/1.2 \"Source Serif 4\", Georgia, serif; color: #191817; letter-spacing: -0.02em; } .ds-card-body { margin: 0.75rem 0 0; font: 400 0.98rem/1.65 \"Source Sans 3\", system-ui, sans-serif; color: #625F59; }"
+      "description": "Speaking topic surface with category, title, body, and audience line.",
+      "html": "<article class=\"ds-card\"><p class=\"ds-eyebrow\">Entrepreneurship</p><h3 class=\"ds-card-title\">Discover and Build Your Ideal Business</h3><p class=\"ds-card-body\">How entrepreneurs identify unmet needs that align with their abilities and values.</p><p class=\"ds-card-meta\">For founders, students, and entrepreneurship programs</p></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; min-height: 100%; background: var(--color-card, #fff); border: 1px solid var(--color-divider, #DCD7CD); border-radius: var(--radius-card, 0.75rem); padding: 1.5rem; box-shadow: var(--shadow-card, 0 1px 2px rgb(25 24 23 / 0.04), 0 8px 24px rgb(25 24 23 / 0.06)); } .ds-eyebrow { margin: 0; font: 600 0.75rem/1.2 \"Source Sans 3\", system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-violet, #5835A5); } .ds-card-title { margin: 0.75rem 0 0; font: 600 1.25rem/1.2 \"Source Serif 4\", Georgia, serif; color: var(--color-foreground, #191817); letter-spacing: -0.02em; } .ds-card-body { margin: 0.75rem 0 0; font: 400 0.98rem/1.65 \"Source Sans 3\", system-ui, sans-serif; color: var(--color-muted, #625F59); } .ds-card-meta { margin: auto 0 0; padding-top: 1rem; border-top: 1px solid var(--color-divider, #DCD7CD); font: 400 0.875rem/1.5 \"Source Sans 3\", system-ui, sans-serif; color: var(--color-muted, #625F59); }"
     },
     {
-      "name": "Site Nav",
+      "name": "People & Places Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Photo-first proof card for real talks, workshops, and public conversations.",
+      "html": "<figure class=\"ds-people-card\"><div class=\"ds-photo\" role=\"img\" aria-label=\"John speaking at a podium\"></div><figcaption class=\"ds-caption\"><p class=\"ds-eyebrow\">Talks</p><h3>On stage</h3><p>John frequently speaks at universities, conferences, and public programs.</p></figcaption></figure>",
+      "css": ".ds-people-card { overflow: hidden; margin: 0; background: var(--color-card, #fff); border: 1px solid var(--color-divider, #DCD7CD); border-radius: var(--radius-card, 0.75rem); box-shadow: var(--shadow-card, 0 1px 2px rgb(25 24 23 / 0.04), 0 8px 24px rgb(25 24 23 / 0.06)); } .ds-photo { aspect-ratio: 4 / 3; background: linear-gradient(135deg, #191817, #625F59 55%, #B08A45); } .ds-caption { padding: 1.25rem; } .ds-caption .ds-eyebrow { margin: 0; font: 600 0.75rem/1.2 \"Source Sans 3\", system-ui, sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-violet, #5835A5); } .ds-caption h3 { margin: 0.5rem 0 0; font: 600 1.125rem/1.2 \"Source Serif 4\", Georgia, serif; color: var(--color-foreground, #191817); } .ds-caption p:last-child { margin: 0.5rem 0 0; font: 400 0.875rem/1.55 \"Source Sans 3\", system-ui, sans-serif; color: var(--color-muted, #625F59); }"
+    },
+    {
+      "name": "Site Navigation",
       "kind": "nav",
       "refersTo": "nav",
-      "description": "Sticky editorial header with name wordmark and invite CTA.",
-      "html": "<header class=\"ds-nav\"><div class=\"ds-brand\"><strong>John Chisholm</strong><span>Entrepreneur · Author · Speaker</span></div><a class=\"ds-btn-primary\" href=\"/contact\">Invite John to Speak</a></header>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem 1.25rem; background: rgb(246 243 237 / 0.95); border-bottom: 1px solid #DCD7CD; } .ds-brand strong { display: block; font: 600 1.25rem/1.1 \"Source Serif 4\", Georgia, serif; color: #191817; } .ds-brand span { display: block; margin-top: 0.25rem; font: 500 0.7rem/1.2 \"Source Sans 3\", system-ui, sans-serif; color: #625F59; } .ds-btn-primary { display: inline-flex; align-items: center; min-height: 44px; padding: 0.7rem 1.35rem; border-radius: 0.5rem; background: #5835A5; color: #fff; text-decoration: none; font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; }"
+      "description": "Sticky warm-paper header with official JCV logo, restrained links, and low-pressure contact CTA.",
+      "html": "<header class=\"ds-nav\"><div class=\"ds-logo\">John Chisholm Ventures</div><nav><a href=\"#\">Topics</a><a href=\"#\">Talks &amp; Writing</a><a href=\"#\">Books</a></nav><a class=\"ds-contact\" href=\"/contact\">Contact</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem 1.25rem; background: rgb(246 243 237 / 0.95); border-bottom: 1px solid var(--color-divider, #DCD7CD); backdrop-filter: blur(8px); } .ds-logo { min-width: 0; font: 600 1.125rem/1.1 \"Source Serif 4\", Georgia, serif; color: var(--color-foreground, #191817); } .ds-nav nav { display: flex; align-items: center; gap: 0.25rem; } .ds-nav nav a { border-radius: 0.375rem; padding: 0.5rem 0.65rem; color: var(--color-muted, #625F59); font: 500 0.9rem/1.2 \"Source Sans 3\", system-ui, sans-serif; text-decoration: none; transition: color 160ms ease; } .ds-nav nav a:hover { color: var(--color-foreground, #191817); } .ds-contact { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.7rem 1rem; border-radius: var(--radius-control, 0.5rem); border: 1px solid var(--color-divider, #DCD7CD); color: var(--color-foreground, #191817); font: 600 0.9375rem/1.2 \"Source Sans 3\", system-ui, sans-serif; text-decoration: none; }"
+    },
+    {
+      "name": "Featured Media Band",
+      "kind": "custom",
+      "refersTo": "featured-media",
+      "description": "Dark violet editorial section for selected talks with explicit play affordance.",
+      "html": "<section class=\"ds-media-band\"><div class=\"ds-video\"><span class=\"ds-play\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" fill=\"none\" aria-hidden=\"true\"><path d=\"M8 5.5v11l9-5.5-9-5.5z\" fill=\"currentColor\"></path></svg></span></div><div><p class=\"ds-media-label\">Featured talk</p><h3>How to Regulate AI</h3><p>John examines why conventional regulation struggles with rapidly evolving technology.</p></div></section>",
+      "css": ".ds-media-band { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 2rem; align-items: center; padding: 2rem; background: var(--color-violet-dark, #382263); color: var(--color-on-violet, #F6F3ED); } .ds-video { position: relative; aspect-ratio: 16 / 9; border: 1px solid rgb(255 255 255 / 0.15); border-radius: var(--radius-card, 0.75rem); background: linear-gradient(135deg, #191817, #625F59); overflow: hidden; } .ds-play { position: absolute; inset: 0; margin: auto; display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 999px; background: #fff; color: var(--color-violet-dark, #382263); box-shadow: var(--shadow-elevated, 0 4px 12px rgb(25 24 23 / 0.08), 0 16px 40px rgb(25 24 23 / 0.1)); } .ds-media-label { margin: 0; font: 600 0.75rem/1.2 \"Source Sans 3\", system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(255 255 255 / 0.7); } .ds-media-band h3 { margin: 0.75rem 0 0; font: 600 1.75rem/1.2 \"Source Serif 4\", Georgia, serif; color: #fff; } .ds-media-band p:last-child { margin: 1rem 0 0; font: 400 1rem/1.65 \"Source Sans 3\", system-ui, sans-serif; color: rgb(255 255 255 / 0.85); }"
     }
   ],
   "narrative": {
     "northStar": "The Lecture Series Program",
-    "overview": "Premium personal-authority publication feel: warm paper, charcoal type, deep violet action, sparingly used gold. Serif ideas, sans interface. Speaking-first, not VC or startup costume.",
+    "overview": "The visual system treats the site as a premium personal-authority publication—closer to a respected author site or university lecture series than a startup marketing page or VC firm. Warm off-white paper, near-black type, restrained deep violet for action, and a whisper of warm gold for rare emphasis. Large editorial serif headlines carry gravitas; clean sans-serif UI keeps navigation and CTAs contemporary without trendiness.\n\nLongevity and experience are advantages. Photography of John speaking or in conversation leads; decorative chrome never replaces content. Motion stays subtle; media never autoplays.",
     "keyCharacteristics": [
-      "Warm editorial paper field",
-      "Deep violet as sole primary action color",
-      "Serif display + sans interface",
-      "Generous spacing; thin dividers; restrained cards",
-      "Speaking-first hierarchy"
+      "Warm editorial paper field, not pure white SaaS canvas",
+      "Deep violet as the sole primary action color",
+      "Serif display + sans interface pairing",
+      "Generous section spacing; thin dividers; restrained cards",
+      "Contact-first, low-pressure hierarchy; firm identity stays in the footer"
     ],
     "rules": [
       {
         "name": "The One Accent Rule",
-        "body": "Violet owns interactive emphasis. Gold is rare editorial ornament.",
+        "body": "Violet owns interactive emphasis. Gold appears only as occasional editorial ornament—not competing CTAs.",
         "section": "colors"
       },
       {
+        "name": "The No-Neon Rule",
+        "body": "No gradients-as-brand, glassmorphism, or heavy purple image overlays.",
+        "section": "colors"
+      },
+      {
+        "name": "The One H1 Rule",
+        "body": "A single page-level `<h1>`; section titles are `<h2>`.",
+        "section": "typography"
+      },
+      {
         "name": "The Viewport Hero Rule",
-        "body": "Hero messaging and primary CTA fit roughly one desktop viewport.",
+        "body": "Keep the hero messaging and primary CTA visible within roughly one desktop viewport—large type, not billboard-scale type.",
         "section": "layout"
       }
     ],
     "dos": [
-      "Do lead with speaking invitation and real talks, biography, and founded companies.",
-      "Do keep John Chisholm Ventures quiet in the footer.",
-      "Do mark missing testimonials as placeholders."
+      "Do lead with John’s ideas, real talks, biography, writing, and founded companies.",
+      "Do use text labels for institutions when logos are unavailable or endorsement-sensitive.",
+      "Do keep John Chisholm Ventures quiet (footer/legal), not as the dominant logo.",
+      "Do use real People & Places photos and captions for social proof; never invent quotes or metrics."
     ],
     "donts": [
-      "Don't present an active VC fund or pitch portal.",
-      "Don't use carousels, autoplay video, or startup gradients.",
-      "Don't lead with an article archive or use JCV as primary homepage identity."
+      "Don't present the site as an active VC fund, portfolio solicitation, or pitch portal.",
+      "Don't use carousels, autoplay video, scroll-jacking, startup gradients, or neon accents.",
+      "Don't wall the homepage with company logos or lead with an article archive.",
+      "Don't use “JCV” as the primary public identity on the homepage."
     ]
   }
 }

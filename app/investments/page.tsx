@@ -6,6 +6,18 @@ import { client } from '@/tina/__generated__/client'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+const LOGO_FALLBACKS = [
+  { match: 'cast', logo: '/assets/investments/cast_app.png' },
+  { match: 'confirmit', logo: '/assets/investments/customersat.png' },
+  { match: 'customersat', logo: '/assets/investments/customersat.png' },
+  { match: 'google', logo: '/assets/investments/decisive_technology.png' },
+  { match: 'decisive', logo: '/assets/investments/decisive_technology.png' },
+  { match: 'highfive', logo: '/assets/investments/hifive.png' },
+  { match: 'parley', logo: '/assets/investments/hifive.png' },
+  { match: 'pyze', logo: '/assets/investments/pyze.png' },
+  { match: 'qnect', logo: '/assets/investments/qnect.jpg' },
+]
+
 export const metadata: Metadata = {
   title: 'Venture History',
   description:
@@ -24,14 +36,15 @@ function VentureCard({
   site?: string | null
   description?: string | null
 }) {
+  const logo = getLogoPath(picture, name)
   const body = (
     <>
       <div className="flex h-12 items-center">
-        {picture ? (
+        {logo ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             className="max-h-10 w-auto max-w-[10rem] object-contain object-left opacity-90"
-            src={picture}
+            src={logo}
             alt=""
             width={160}
             height={40}
@@ -67,6 +80,17 @@ function VentureCard({
   }
 
   return <div className={className}>{body}</div>
+}
+
+function getLogoPath(picture?: string | null, name?: string | null) {
+  if (picture) {
+    if (picture.startsWith('/')) return picture
+    return `/${picture}`
+  }
+
+  const normalizedName = (name || '').toLowerCase()
+  return LOGO_FALLBACKS.find((item) => normalizedName.includes(item.match))
+    ?.logo
 }
 
 export default async function InvestmentsPage() {
@@ -108,7 +132,7 @@ export default async function InvestmentsPage() {
 
       <div className="mt-14 flex flex-col gap-3 border-t border-divider pt-10 sm:flex-row sm:flex-wrap">
         <Link href="/contact" className="btn btn-primary">
-          Invite John to Speak
+          Contact John
         </Link>
         <Link href="/team" className="btn btn-secondary">
           Read John’s biography

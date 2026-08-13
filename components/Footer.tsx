@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const LINKS = [
-  { href: '/#speaking-topics', label: 'Speaking' },
+  { href: '/#speaking-topics', label: 'Topics' },
   { href: '/mission', label: 'About' },
   { href: '/team', label: 'Team' },
   { href: '/talks', label: 'Talks & Writing' },

@@ -60,6 +60,8 @@ type Query {
   teamConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: TeamFilter): TeamConnection!
   investment(relativePath: String): Investment!
   investmentConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: InvestmentFilter): InvestmentConnection!
+  peoplePlace(relativePath: String): PeoplePlace!
+  peoplePlaceConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PeoplePlaceFilter): PeoplePlaceConnection!
   page(relativePath: String): Page!
   pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PageFilter): PageConnection!
 }
@@ -68,6 +70,7 @@ input DocumentFilter {
   post: PostFilter
   team: TeamFilter
   investment: InvestmentFilter
+  peoplePlace: PeoplePlaceFilter
   page: PageFilter
 }
 
@@ -94,7 +97,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post | Team | Investment | Page | Folder
+union DocumentNode = Post | Team | Investment | PeoplePlace | Page | Folder
 
 type PostAuthor {
   name: String
@@ -257,6 +260,38 @@ type InvestmentConnection implements Connection {
   edges: [InvestmentConnectionEdges]
 }
 
+type PeoplePlace implements Node & Document {
+  title: String!
+  image: String!
+  alt: String
+  location: String
+  caption: String
+  order: Float
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input PeoplePlaceFilter {
+  title: StringFilter
+  image: ImageFilter
+  alt: StringFilter
+  location: StringFilter
+  caption: StringFilter
+  order: NumberFilter
+}
+
+type PeoplePlaceConnectionEdges {
+  cursor: String!
+  node: PeoplePlace
+}
+
+type PeoplePlaceConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PeoplePlaceConnectionEdges]
+}
+
 type Page implements Node & Document {
   title: String!
   body: JSON
@@ -293,6 +328,8 @@ type Mutation {
   createTeam(relativePath: String!, params: TeamMutation!): Team!
   updateInvestment(relativePath: String!, params: InvestmentMutation!): Investment!
   createInvestment(relativePath: String!, params: InvestmentMutation!): Investment!
+  updatePeoplePlace(relativePath: String!, params: PeoplePlaceMutation!): PeoplePlace!
+  createPeoplePlace(relativePath: String!, params: PeoplePlaceMutation!): PeoplePlace!
   updatePage(relativePath: String!, params: PageMutation!): Page!
   createPage(relativePath: String!, params: PageMutation!): Page!
 }
@@ -301,6 +338,7 @@ input DocumentUpdateMutation {
   post: PostMutation
   team: TeamMutation
   investment: InvestmentMutation
+  peoplePlace: PeoplePlaceMutation
   page: PageMutation
   relativePath: String
 }
@@ -309,6 +347,7 @@ input DocumentMutation {
   post: PostMutation
   team: TeamMutation
   investment: InvestmentMutation
+  peoplePlace: PeoplePlaceMutation
   page: PageMutation
 }
 
@@ -347,6 +386,15 @@ input InvestmentMutation {
   picture: String
   site: String
   description: String
+  order: Float
+}
+
+input PeoplePlaceMutation {
+  title: String
+  image: String
+  alt: String
+  location: String
+  caption: String
   order: Float
 }
 

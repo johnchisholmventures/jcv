@@ -76,7 +76,7 @@ Longevity and experience are advantages. Photography of John speaking or in conv
 - Deep violet as the sole primary action color
 - Serif display + sans interface pairing
 - Generous section spacing; thin dividers; restrained cards
-- Speaking-first hierarchy; firm identity stays in the footer
+- Contact-first, low-pressure hierarchy; firm identity stays in the footer
 
 ## Colors
 
@@ -161,10 +161,10 @@ Slightly rounded—never pill-heavy. Controls ~8px; cards ~12px. Thin 1px divide
 ## Do's and Don'ts
 
 ### Do:
-- **Do** lead with speaking invitation and real talks, biography, and founded companies.
+- **Do** lead with John’s ideas, real talks, biography, writing, and founded companies.
 - **Do** use text labels for institutions when logos are unavailable or endorsement-sensitive.
 - **Do** keep John Chisholm Ventures quiet (footer/legal), not as the dominant logo.
-- **Do** mark missing testimonials as placeholders; never invent quotes or metrics.
+- **Do** use real People & Places photos and captions for social proof; never invent quotes or metrics.
 
 ### Don't:
 - **Don't** present the site as an active VC fund, portfolio solicitation, or pitch portal.

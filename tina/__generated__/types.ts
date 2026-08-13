@@ -88,6 +88,8 @@ export type Query = {
   teamConnection: TeamConnection;
   investment: Investment;
   investmentConnection: InvestmentConnection;
+  peoplePlace: PeoplePlace;
+  peoplePlaceConnection: PeoplePlaceConnection;
   page: Page;
   pageConnection: PageConnection;
 };
@@ -159,6 +161,21 @@ export type QueryInvestmentConnectionArgs = {
 };
 
 
+export type QueryPeoplePlaceArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryPeoplePlaceConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PeoplePlaceFilter>;
+};
+
+
 export type QueryPageArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -177,6 +194,7 @@ export type DocumentFilter = {
   post?: InputMaybe<PostFilter>;
   team?: InputMaybe<TeamFilter>;
   investment?: InputMaybe<InvestmentFilter>;
+  peoplePlace?: InputMaybe<PeoplePlaceFilter>;
   page?: InputMaybe<PageFilter>;
 };
 
@@ -217,7 +235,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Post | Team | Investment | Page | Folder;
+export type DocumentNode = Post | Team | Investment | PeoplePlace | Page | Folder;
 
 export type PostAuthor = {
   __typename?: 'PostAuthor';
@@ -390,6 +408,41 @@ export type InvestmentConnection = Connection & {
   edges?: Maybe<Array<Maybe<InvestmentConnectionEdges>>>;
 };
 
+export type PeoplePlace = Node & Document & {
+  __typename?: 'PeoplePlace';
+  title: Scalars['String']['output'];
+  image: Scalars['String']['output'];
+  alt?: Maybe<Scalars['String']['output']>;
+  location?: Maybe<Scalars['String']['output']>;
+  caption?: Maybe<Scalars['String']['output']>;
+  order?: Maybe<Scalars['Float']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type PeoplePlaceFilter = {
+  title?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+  alt?: InputMaybe<StringFilter>;
+  location?: InputMaybe<StringFilter>;
+  caption?: InputMaybe<StringFilter>;
+  order?: InputMaybe<NumberFilter>;
+};
+
+export type PeoplePlaceConnectionEdges = {
+  __typename?: 'PeoplePlaceConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<PeoplePlace>;
+};
+
+export type PeoplePlaceConnection = Connection & {
+  __typename?: 'PeoplePlaceConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<PeoplePlaceConnectionEdges>>>;
+};
+
 export type Page = Node & Document & {
   __typename?: 'Page';
   title: Scalars['String']['output'];
@@ -430,6 +483,8 @@ export type Mutation = {
   createTeam: Team;
   updateInvestment: Investment;
   createInvestment: Investment;
+  updatePeoplePlace: PeoplePlace;
+  createPeoplePlace: PeoplePlace;
   updatePage: Page;
   createPage: Page;
 };
@@ -504,6 +559,18 @@ export type MutationCreateInvestmentArgs = {
 };
 
 
+export type MutationUpdatePeoplePlaceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PeoplePlaceMutation;
+};
+
+
+export type MutationCreatePeoplePlaceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PeoplePlaceMutation;
+};
+
+
 export type MutationUpdatePageArgs = {
   relativePath: Scalars['String']['input'];
   params: PageMutation;
@@ -519,6 +586,7 @@ export type DocumentUpdateMutation = {
   post?: InputMaybe<PostMutation>;
   team?: InputMaybe<TeamMutation>;
   investment?: InputMaybe<InvestmentMutation>;
+  peoplePlace?: InputMaybe<PeoplePlaceMutation>;
   page?: InputMaybe<PageMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -527,6 +595,7 @@ export type DocumentMutation = {
   post?: InputMaybe<PostMutation>;
   team?: InputMaybe<TeamMutation>;
   investment?: InputMaybe<InvestmentMutation>;
+  peoplePlace?: InputMaybe<PeoplePlaceMutation>;
   page?: InputMaybe<PageMutation>;
 };
 
@@ -568,6 +637,15 @@ export type InvestmentMutation = {
   order?: InputMaybe<Scalars['Float']['input']>;
 };
 
+export type PeoplePlaceMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  alt?: InputMaybe<Scalars['String']['input']>;
+  location?: InputMaybe<Scalars['String']['input']>;
+  caption?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Scalars['Float']['input']>;
+};
+
 export type PageMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
@@ -578,6 +656,8 @@ export type PostPartsFragment = { __typename: 'Post', title: string, excerpt: st
 export type TeamPartsFragment = { __typename: 'Team', name: string, picture?: string | null, twitter?: string | null, linkedIn?: string | null, order?: number | null, body?: any | null };
 
 export type InvestmentPartsFragment = { __typename: 'Investment', name: string, picture?: string | null, site?: string | null, description?: string | null, order?: number | null };
+
+export type PeoplePlacePartsFragment = { __typename: 'PeoplePlace', title: string, image: string, alt?: string | null, location?: string | null, caption?: string | null, order?: number | null };
 
 export type PagePartsFragment = { __typename: 'Page', title: string, body?: any | null };
 
@@ -638,6 +718,25 @@ export type InvestmentConnectionQueryVariables = Exact<{
 
 export type InvestmentConnectionQuery = { __typename?: 'Query', investmentConnection: { __typename?: 'InvestmentConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'InvestmentConnectionEdges', cursor: string, node?: { __typename: 'Investment', id: string, name: string, picture?: string | null, site?: string | null, description?: string | null, order?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
+export type PeoplePlaceQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type PeoplePlaceQuery = { __typename?: 'Query', peoplePlace: { __typename: 'PeoplePlace', id: string, title: string, image: string, alt?: string | null, location?: string | null, caption?: string | null, order?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type PeoplePlaceConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PeoplePlaceFilter>;
+}>;
+
+
+export type PeoplePlaceConnectionQuery = { __typename?: 'Query', peoplePlaceConnection: { __typename?: 'PeoplePlaceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PeoplePlaceConnectionEdges', cursor: string, node?: { __typename: 'PeoplePlace', id: string, title: string, image: string, alt?: string | null, location?: string | null, caption?: string | null, order?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
@@ -697,6 +796,17 @@ export const InvestmentPartsFragmentDoc = gql`
   picture
   site
   description
+  order
+}
+    `;
+export const PeoplePlacePartsFragmentDoc = gql`
+    fragment PeoplePlaceParts on PeoplePlace {
+  __typename
+  title
+  image
+  alt
+  location
+  caption
   order
 }
     `;
@@ -878,6 +988,63 @@ export const InvestmentConnectionDocument = gql`
   }
 }
     ${InvestmentPartsFragmentDoc}`;
+export const PeoplePlaceDocument = gql`
+    query peoplePlace($relativePath: String!) {
+  peoplePlace(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PeoplePlaceParts
+  }
+}
+    ${PeoplePlacePartsFragmentDoc}`;
+export const PeoplePlaceConnectionDocument = gql`
+    query peoplePlaceConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PeoplePlaceFilter) {
+  peoplePlaceConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PeoplePlaceParts
+      }
+    }
+  }
+}
+    ${PeoplePlacePartsFragmentDoc}`;
 export const PageDocument = gql`
     query page($relativePath: String!) {
   page(relativePath: $relativePath) {
@@ -956,6 +1123,12 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     investmentConnection(variables?: InvestmentConnectionQueryVariables, options?: C): Promise<{data: InvestmentConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: InvestmentConnectionQueryVariables, query: string}> {
         return requester<{data: InvestmentConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: InvestmentConnectionQueryVariables, query: string}, InvestmentConnectionQueryVariables>(InvestmentConnectionDocument, variables, options);
       },
+    peoplePlace(variables: PeoplePlaceQueryVariables, options?: C): Promise<{data: PeoplePlaceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PeoplePlaceQueryVariables, query: string}> {
+        return requester<{data: PeoplePlaceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PeoplePlaceQueryVariables, query: string}, PeoplePlaceQueryVariables>(PeoplePlaceDocument, variables, options);
+      },
+    peoplePlaceConnection(variables?: PeoplePlaceConnectionQueryVariables, options?: C): Promise<{data: PeoplePlaceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PeoplePlaceConnectionQueryVariables, query: string}> {
+        return requester<{data: PeoplePlaceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PeoplePlaceConnectionQueryVariables, query: string}, PeoplePlaceConnectionQueryVariables>(PeoplePlaceConnectionDocument, variables, options);
+      },
     page(variables: PageQueryVariables, options?: C): Promise<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}> {
         return requester<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}, PageQueryVariables>(PageDocument, variables, options);
       },
@@ -1021,5 +1194,3 @@ export const queries = (
   const requester = generateRequester(client)
   return getSdk(requester)
 }
-
-  

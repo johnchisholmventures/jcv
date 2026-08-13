@@ -163,6 +163,61 @@ query investmentConnection($before: String, $after: String, $first: Float, $last
   }
 }
 
+query peoplePlace($relativePath: String!) {
+  peoplePlace(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PeoplePlaceParts
+  }
+}
+
+query peoplePlaceConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PeoplePlaceFilter) {
+  peoplePlaceConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PeoplePlaceParts
+      }
+    }
+  }
+}
+
 query page($relativePath: String!) {
   page(relativePath: $relativePath) {
     ... on Document {

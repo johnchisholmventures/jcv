@@ -52,6 +52,8 @@ export default function BooksPage() {
                 the intersection of unmet customer needs and your own abilities,
                 interests, relationships, and values—written for aspiring
                 founders, students, and anyone considering entrepreneurship.
+                The book is now available in English, Chinese, Spanish,
+                Portuguese, and Polish.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link href="/uyic" className="btn btn-primary">

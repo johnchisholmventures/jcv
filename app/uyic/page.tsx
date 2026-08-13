@@ -50,6 +50,10 @@ export default function UyicPage() {
               founding and leading technology companies.
             </p>
             <p>
+              <em>Unleash Your Inner Company</em> is now available in English,
+              Chinese, Spanish, Portuguese, and Polish.
+            </p>
+            <p>
               Educators can build course syllabi around the framework;
               complimentary classroom copies may be available for qualified
               programs.
@@ -69,7 +73,7 @@ export default function UyicPage() {
               For educators
             </Link>
             <Link href="/contact" className="btn btn-secondary">
-              Invite John to Speak
+              Contact John
             </Link>
           </div>
 

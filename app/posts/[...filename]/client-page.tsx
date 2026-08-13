@@ -126,7 +126,7 @@ export default function ClientPage(props: ClientPageProps) {
 
           <div className="mt-12 flex flex-col gap-3 border-t border-divider pt-10 sm:flex-row sm:flex-wrap">
             <Link href="/contact" className="btn btn-primary">
-              Invite John to Speak
+              Contact John
             </Link>
             <Link href="/#talks" className="btn btn-secondary">
               More talks

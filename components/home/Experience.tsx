@@ -10,8 +10,8 @@ const PROOFS = [
     label: 'Both subsequently acquired',
   },
   {
-    value: 'Global audiences',
-    label: 'Talks and programs across North America, Europe, Asia, and Australia',
+    value: 'Board service',
+    label: 'Including FEE, Future of Free Speech, MIT, and Santa Fe Institute',
   },
 ]
 
@@ -27,11 +27,11 @@ export default function Experience() {
           <figure className="overflow-hidden rounded-[var(--radius-card)] border border-divider bg-card shadow-[var(--shadow-card)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/blog/authors/chisholm.jpg"
-              alt="Portrait of John Chisholm"
+              src="/assets/john/john-chisholm-current-portrait-preferred.jpg"
+              alt="Recent portrait of John Chisholm"
               className="aspect-[4/5] w-full object-cover object-top"
-              width={640}
-              height={800}
+              width={761}
+              height={809}
             />
           </figure>
 
@@ -54,8 +54,14 @@ export default function Experience() {
               <p>
                 His experience spans the emergence of personal computing, the
                 growth of Silicon Valley, enterprise software, SaaS, mobile
-                technology, and today’s debates over artificial intelligence and
-                regulation.
+                technology, and today’s debates over artificial intelligence,
+                regulation, higher education, and economic growth.
+              </p>
+              <p>
+                John serves on boards and advisory groups connected to
+                entrepreneurship, free inquiry, science, and public policy,
+                including recent roles with the Foundation for Economic
+                Education and the Future of Free Speech.
               </p>
             </div>
 

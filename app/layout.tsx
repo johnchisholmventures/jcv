@@ -20,6 +20,7 @@ const sourceSerif = Source_Serif_4({
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://johnchisholmventures.com'
+const johnPortrait = '/assets/john/john-chisholm-current-portrait-preferred.jpg'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,10 +41,10 @@ export const metadata: Metadata = {
       'John Chisholm is a technology entrepreneur, author, and international speaker on entrepreneurship, innovation, artificial intelligence, regulation, and personal development.',
     images: [
       {
-        url: '/assets/john-banner.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'John Chisholm speaking',
+        url: johnPortrait,
+        width: 761,
+        height: 809,
+        alt: 'John Chisholm',
       },
     ],
     siteName: 'John Chisholm',
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     title: 'John Chisholm | Entrepreneur, Author and International Speaker',
     description:
       'Technology entrepreneur, author, and international speaker on entrepreneurship, innovation, AI, regulation, and personal development.',
-    images: ['/assets/john-banner.jpg'],
+    images: [johnPortrait],
   },
   icons: {
     icon: '/favicon/favicon.ico',
@@ -68,7 +69,7 @@ const jsonLd = {
       '@id': `${siteUrl}/#person`,
       name: 'John Chisholm',
       url: siteUrl,
-      image: `${siteUrl}/assets/blog/authors/chisholm.jpg`,
+      image: `${siteUrl}${johnPortrait}`,
       jobTitle: 'Entrepreneur, Author, and International Speaker',
       sameAs: [
         'https://www.linkedin.com/pub/john-chisholm/0/4/556',
@@ -120,10 +121,10 @@ export default function RootLayout({
         className={`${sourceSans.variable} ${sourceSerif.variable} antialiased`}
       >
         {/*
-          THESIS: An experienced founder’s ideas, offered to organizers—not a VC firm homepage or article warehouse.
+          THESIS: An experienced founder’s ideas, offered without pressure—not a VC firm homepage or article warehouse.
           OWN-WORLD: Warm off-white editorial field (#F6F3ED), charcoal type, deep violet action, sparingly used gold; serif display + sans interface; thin dividers, restrained cards, portrait photography.
-          STORY: Visitor understands John is a credible long-career speaker, believes his ideas are earned in building companies, and invites him to speak or watches a talk.
-          FIRST VIEWPORT: Sticky name+CTA nav; two-column hero—headline and dual CTAs left, speaking photograph right; credibility line under actions.
+          STORY: Visitor understands John is credible and experienced, sees where his ideas apply, and contacts him or watches a talk.
+          FIRST VIEWPORT: Sticky name+contact nav; two-column hero—headline and dual CTAs left, recent portrait right.
           FORM: Brief-pinned premium author / lecture-series editorial (user design spec); seed key: brief-pinned.
           FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
         */}
