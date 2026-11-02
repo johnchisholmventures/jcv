@@ -298,6 +298,10 @@
     line-height: 1.55;
   }
 
+  .markdown figure {
+    margin-block: 1.75rem;
+  }
+
   .markdown img {
     display: block;
     width: 100%;
@@ -307,6 +311,10 @@
     border-radius: var(--radius-card);
     border: 1px solid var(--color-divider);
     box-shadow: var(--shadow-card);
+  }
+
+  .markdown figure img {
+    margin-block: 0;
   }
 
   .markdown hr {

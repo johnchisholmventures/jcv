@@ -7,6 +7,7 @@ import FeaturedVideo from '@/components/FeaturedVideo'
 import TinaContent from '@/components/TinaContent'
 import DateFormatter from '@/components/DateFormatter'
 import { topicLabel } from '@/lib/posts'
+import { normalizeMediaPath } from '@/lib/media'
 import Link from 'next/link'
 
 interface ClientPageProps {
@@ -25,6 +26,8 @@ export default function ClientPage(props: ClientPageProps) {
   })
 
   const post = data.post
+  const coverImage = normalizeMediaPath(post.coverImage)
+  const authorPicture = normalizeMediaPath(post.author?.picture)
   const topics = (post.topics || []).filter(
     (t): t is string => typeof t === 'string' && t.length > 0
   )
@@ -81,11 +84,11 @@ export default function ClientPage(props: ClientPageProps) {
             <div className="mb-10">
               <FeaturedVideo id={post.youtubeId} />
             </div>
-          ) : post.coverImage ? (
+          ) : coverImage ? (
             <figure className="mb-10 overflow-hidden rounded-[var(--radius-card)] border border-divider shadow-[var(--shadow-card)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={post.coverImage}
+                src={coverImage}
                 alt=""
                 className="w-full object-cover"
                 width={1200}
@@ -99,10 +102,10 @@ export default function ClientPage(props: ClientPageProps) {
           {post.author?.name ? (
             <footer className="mt-12 border-t border-divider pt-8">
               <div className="flex items-center gap-4">
-                {post.author.picture ? (
+                {authorPicture ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={post.author.picture}
+                    src={authorPicture}
                     alt=""
                     className="h-14 w-14 rounded-full border border-divider object-cover"
                     width={56}

@@ -4,7 +4,7 @@ excerpt: >-
   Exploring the impact of imposed vs. organic regulation on entrepreneurship,
   innovation and economic growth.
 date: '2018-07-14T05:35:07.322Z'
-coverImage: /assets/blog/covers/drones.jpg
+coverImage: /assets/blog/covers/drone.jpg
 format: external
 topics:
   - governance

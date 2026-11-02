@@ -6,6 +6,7 @@ import DateFormatter from './DateFormatter'
 import FeaturedVideo from './FeaturedVideo'
 import { italicizeWord } from '@/lib/util'
 import { isExternal, postHref } from '@/lib/posts'
+import { normalizeMediaPath } from '@/lib/media'
 
 type Article = {
   title?: string | null
@@ -29,6 +30,7 @@ export default function FeaturedArticles({
   const article = articles[index]
   const href = postHref(article)
   const external = isExternal(article)
+  const coverImage = normalizeMediaPath(article.coverImage)
 
   return (
     <section
@@ -78,10 +80,10 @@ export default function FeaturedArticles({
           <div>
             {article.youtubeId ? (
               <FeaturedVideo id={article.youtubeId} />
-            ) : article.coverImage ? (
+            ) : coverImage ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={article.coverImage}
+                src={coverImage}
                 alt=""
                 className="w-full rounded-[var(--radius-card)] border border-divider shadow-[var(--shadow-card)]"
                 width={960}

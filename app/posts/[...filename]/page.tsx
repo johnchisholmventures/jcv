@@ -2,6 +2,7 @@ import { client } from '@/tina/__generated__/client'
 import ClientPage from './client-page'
 import { notFound } from 'next/navigation'
 import { isDraft, isExternal } from '@/lib/posts'
+import { normalizeMediaPath } from '@/lib/media'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
@@ -35,8 +36,9 @@ export async function generateMetadata({
     const description =
       post.excerpt ||
       'Talk or writing by John Chisholm on entrepreneurship, innovation, and related ideas.'
-    const images = post.coverImage
-      ? [post.coverImage]
+    const coverImage = normalizeMediaPath(post.coverImage)
+    const images = coverImage
+      ? [coverImage]
       : post.youtubeId
         ? [`https://img.youtube.com/vi/${post.youtubeId}/hqdefault.jpg`]
         : undefined

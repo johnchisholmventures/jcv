@@ -22,17 +22,31 @@ export default async function EducatorsPage() {
   return (
     <PageShell>
       <BackLink href="/books" label="Back to books" />
-      <PageHeader
-        eyebrow="Educator resources"
-        title="Unleash Your Inner Company for educators"
-        description="Complimentary classroom copies may be available for qualified entrepreneurship educators who build a syllabus around the book."
-      />
+      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
+        <figure className="mx-auto w-full max-w-[16rem] lg:mx-0 lg:max-w-none">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/uyic_cover.jpg"
+            alt="Cover of Unleash Your Inner Company by John Chisholm"
+            className="w-full rounded-[var(--radius-card)] border border-divider shadow-[var(--shadow-elevated)]"
+            width={400}
+            height={600}
+          />
+        </figure>
 
-      <div className="mt-10 max-w-3xl">
-        <TinaContent content={data.page.body} />
+        <div>
+          <PageHeader
+            eyebrow="Educator resources"
+            title="Unleash Your Inner Company for educators"
+            description="Complimentary classroom copies may be available for qualified entrepreneurship educators who build a syllabus around the book."
+          />
+          <div className="mt-8">
+            <TinaContent content={data.page.body} />
+          </div>
+        </div>
       </div>
 
-      <div className="mt-12">
+      <div className="mt-14">
         <h2 className="font-display text-2xl text-foreground md:text-[1.75rem]">
           Classroom moments
         </h2>

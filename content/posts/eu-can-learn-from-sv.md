@@ -2,7 +2,7 @@
 title: What can the EU Learn from Silicon Valley
 excerpt: 'Video from the Free Market Roadshow stop in Milan, Italy.'
 date: '2014-04-14T05:35:07.322Z'
-coverImage: /assets/jcv_site_base_image.jpg
+coverImage: /assets/jcv_site_base_image.png
 format: video
 topics:
   - governance

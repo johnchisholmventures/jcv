@@ -1,8 +1,6 @@
 ---
 title: Educators
 ---
-![](/uyic_cover.jpg)
-
 If you…
 
 - Teach an accredited college or university course in entrepreneurship
